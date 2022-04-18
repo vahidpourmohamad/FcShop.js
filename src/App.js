@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import BannerCmp from './Components/BanerComponent/BannerCmp';
 import Slidercmp from './Components/SliderComponent/Slidercmp';
