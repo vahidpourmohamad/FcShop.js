@@ -1,0 +1,12 @@
+.SlidercmpContainer{
+    width: 100%;
+    background-image: url("../../Assets/Images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: center;
+
+}
+.SlidercmpParent{
+
+}
