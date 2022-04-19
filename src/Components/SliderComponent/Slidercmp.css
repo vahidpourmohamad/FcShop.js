@@ -5,8 +5,22 @@
     background-size: cover;
     background-position: center;
     background: center;
-
+    background-attachment: fixed;
+    z-index: 2;
+    
 }
 .SlidercmpParent{
+    display: flex;
+    background-image: url("../../Assets/Images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: center;
+    background-attachment: fixed;
+}
+.SlidercmpImage{
+
+}
+.SlidercmpText{
 
 }
