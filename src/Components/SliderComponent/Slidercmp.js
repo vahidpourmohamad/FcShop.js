@@ -7,7 +7,12 @@ export default function Slidercmp() {
     <div className="SlidercmpContainer">
       <div className="SlidercmpParent">
         <div className="SlidercmpImage">{/* <img src={banner}></img> */}</div>
-        <div className="SlidercmpText">یک خرید خیـــــلی عالی</div>
+        <div className="SlidercmpText">
+          <div className="SlidercmpTextHeading">یک خرید عالی</div>
+
+          <div className="SlidercmpTextSubHeading">همیشه عالی خرید کن</div>
+          <a href="#" className="Slidercmpbtn">الان بخر</a>
+        </div>
       </div>
     </div>
   );

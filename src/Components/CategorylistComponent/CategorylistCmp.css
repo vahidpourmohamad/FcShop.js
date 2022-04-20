@@ -1,0 +1,75 @@
+.CategorylistCmpContainer {
+  width: 100%;
+  margin-top: 100px;
+}
+.CategorylistCmpParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.CategorylistCmpHeading {
+  display: flex;
+  font-size: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.CategorylistCmpHeadingText {
+  font-size: 50px;
+}
+.Line {
+  width: 150px;
+  height: 47px;
+  border-top: 4px solid var(--main);
+}
+.card {
+  width: 400px;
+  height: 254px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(250, 250, 250) 0.2em solid;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card:hover {
+  border: var(--main) 0.2em solid;
+}
+.CategorylistCmpCardContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.CategorylistCmpCardContainerR {
+  min-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CategorylistCmpCardContainerL {
+  min-width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.CategorylistCmpCardContainerLTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.CategorylistCmpCardContainerLBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
