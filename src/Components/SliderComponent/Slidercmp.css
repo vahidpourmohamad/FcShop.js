@@ -96,6 +96,7 @@
   margin-top: 15px;
   margin-right: 170px;
   transition: 0.5s ease-in-out;
+  color: var(--main);
 }
 .SlidercmpTextSubHeading:hover {
   transform: scale(1.2);
