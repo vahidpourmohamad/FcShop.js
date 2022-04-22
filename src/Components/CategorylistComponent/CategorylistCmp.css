@@ -1,6 +1,6 @@
 .CategorylistCmpContainer {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .CategorylistCmpParent {
   display: flex;
@@ -10,13 +10,13 @@
 }
 .CategorylistCmpHeading {
   display: flex;
-  font-size: 30px;
+  font-size: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .CategorylistCmpHeadingText {
-  font-size: 30px;
+  font-size: 2rem;
 }
 .Line {
   width: 150px;
