@@ -1,8 +1,7 @@
 .productcard {
-    width: 200px;
-    height: 280px;
-    overflow: hidden;
-
+  width: 200px;
+  height: 280px;
+  overflow: hidden;
 }
 .pimg {
   display: flex;
@@ -10,25 +9,31 @@
   flex-direction: column;
 }
 .productimage1 {
-
-  z-index: 3;
+  z-index: 1;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   height: 160px;
-   width: 100%;
+  width: 100%;
 }
 .productimage1:hover {
 }
 .productimage2 {
-
+  position: relative;
+  top: -160px;
   height: 160px;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    width: 100%;
-  
-  
-}
-.productimage2:hover {
+  width: 100%;
   z-index: 2;
- 
+  opacity: 1;
+}
+.test {
+  opacity: 1;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.test:hover {
+  z-index: 2;
+  opacity: 0;
+}
+.productimage2 img :hover {
 }
 .pro .productname {
 }
