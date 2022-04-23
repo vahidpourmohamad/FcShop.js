@@ -5,24 +5,30 @@ import { CSSTransition } from "react-transition-group";
 export default function ProductCardCmp(props) {
   const { Id, Pname, Price, Discount, imgone, imgtwo } = props;
   return (
-    <div className="productcard">
-      <div className="pimg">
- 
-        <div className="productimage1">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/Products/` + imgone}
-            style={{ width: "100%" }}
-          ></img>
+    <div>
+      <div className="productcard ">
+       
+              <div className="Discount ">{Discount}</div>
+        <div className="ImageContainer">
+          <div className="ImageFlex">
+            <div className="productimage1">
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/Products/` + imgone}
+                style={{ width: "100%" }}
+              ></img>
+            </div>
+            <div className="productimage2">
+              <img
+                className="test"
+                src={`${process.env.PUBLIC_URL}/assets/Products/` + imgtwo}
+                style={{ width: "100%" }}
+              ></img>
+            </div>
+          </div>
         </div>
-        <div className="productimage2">
-          <img className="test"
-            src={`${process.env.PUBLIC_URL}/assets/Products/` + imgtwo}
-            style={{ width: "100%" }}
-          ></img>
-        </div>
+        <div className="productname">{Pname}</div>
+        <div className="price">تومان {Price} </div>
       </div>
-      <div className="productname">{Pname}</div>
-      <div className="price">{Price}</div>
     </div>
   );
 }
