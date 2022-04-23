@@ -7,8 +7,7 @@ export default function ProductCardCmp(props) {
   return (
     <div>
       <div className="productcard ">
-       
-              <div className="Discount ">{Discount}</div>
+        <div className="Discount ">{Discount}</div>
         <div className="ImageContainer">
           <div className="ImageFlex">
             <div className="productimage1">
@@ -27,7 +26,16 @@ export default function ProductCardCmp(props) {
           </div>
         </div>
         <div className="productname">{Pname}</div>
-        <div className="price">تومان {Price} </div>
+        <div className="price">
+          <div className="toman">تومان</div>
+          <div className="pricemoney">{Price}</div>
+          <div className="Pricetext">مبلغ</div>
+        </div>
+        <div className="buybtn">
+          <a href="#" style={{ color: "white" }}>
+            اطلاعات بیشتر
+          </a>
+        </div>
       </div>
     </div>
   );

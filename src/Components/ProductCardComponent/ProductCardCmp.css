@@ -1,6 +1,6 @@
 .productcard {
   width: 240px;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
   box-shadow: -2px 0 90px rgb(0 0 0 / 15%);
   transition: border 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -11,6 +11,11 @@
   align-items: flex-end;
   justify-content: space-around;
   position: relative;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.productcard:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .Discount {
@@ -63,11 +68,85 @@
   opacity: 1;
 }
 .productname {
-  margin-right: 20px;
+  /* margin-rigt: 10px;  */
   font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
 }
 .price {
-  margin-right: 30px;
+  display: flex;
+  width: 100%;
+  /* margin-right: 10px; */
+  justify-content: center;
+  align-items: center;
+}
+.Pricetext {
   font-size: 0.8rem;
   color: rgb(136, 136, 136);
+}
+.toman {
+  font-size: 0.8rem;
+  color: rgb(136, 136, 136);
+}
+.pricemoney {
+  font-size: 1.1rem;
+  margin-right: 10px;
+  color: black;
+}
+
+.buybtn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* margin-right: 150px; */
+  display: inline-block;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--main);
+  line-height: 30px;
+  /* padding: 0 40px; */
+  text-align: center;
+  position: relative;
+  align-self: center;
+  width: 50%;
+}
+.buybtn:hover {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--dark-blue);
+  line-height: 30px;
+  width: 50%;
+  text-align: center;
+  position: relative;
+}
+.buybtn::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(194, 166, 115, 0.5);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s;
+}
+.buybtn:hover::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(194, 166, 115, 0.5);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s;
+  transform: translateX(+8px) translateY(-8px) scale(1.2);
 }
