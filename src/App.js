@@ -6,6 +6,7 @@ import { Fragment } from 'react';
 import CategorylistCmp from './Components/CategorylistComponent/CategorylistCmp';
 import BgLogoParrallax from './Components/BgLogoParrallax/BgLogoParrallax';
 import PopularProductListCom from './Components/PopularProductListComponent/PopularProductListCom';
+import AboutCmp from './Components/AboutComponent/AboutCmp';
 function App() {
   return (
     <Fragment>
@@ -13,7 +14,8 @@ function App() {
       <Slidercmp />
       <BgLogoParrallax />
       <CategorylistCmp />
-      <PopularProductListCom/>
+      <PopularProductListCom />
+      <AboutCmp/>
     </Fragment>
   ); 
 }
