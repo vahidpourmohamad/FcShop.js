@@ -1,0 +1,14 @@
+.AdvertismentCmpContainer {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+    align-items: center;
+  justify-content: center;
+}
+.AdvertismentCmpParent {
+    width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,65 @@
+.AdvertismentpanelcmpContainer {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 180px;
+  margin-left: 2%;
+  margin-right: 2%;
+  transition: 1s ease-in-out;
+}
+.AdvertismentpanelcmpContainer:hover {
+  transform: scale(1.05);
+}
+.Advertismentpanelcmpparent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.shine {
+  width: 1000px;
+  height: 100px;
+  margin-left: -100px;
+  transform: rotate(30deg);
+  background: -webkit-linear-gradient(
+    top,
+    transparent,
+    rgba(200, 200, 200, 0.3),
+    transparent
+  );
+  position: absolute;
+  animation: shine 6s ease-in-out infinite;
+  z-index: 5;
+}
+@keyframes shine {
+  0%,
+  100% {
+    margin-top: -100px;
+  }
+  50% {
+    margin-top: 800px;
+  }
+}
+.Borderinner {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border: 2px solid var(--main);
+  top: 10%;
+  left: 10%;
+}
+.TextHead {
+  font-size: 2rem;
+  color: var(--dark-blue);
+}
+.TextSub {
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+}

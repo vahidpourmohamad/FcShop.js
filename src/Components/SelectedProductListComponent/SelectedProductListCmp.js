@@ -3,6 +3,7 @@ import "./SelectedProductListCmp.css";
 import { useState } from 'react'
 import { ProductsDummy } from "../PopularProductListComponent/ProductlistDummy";
 import ProductCardCmp from "../ProductCardComponent/ProductCardCmp";
+import { ProductsDummyTwo } from "../PopularProductListComponent/ProductlistDummy";
 
 export default function SelectedProductListCmp() {
     const [ProductList, setProductList] = useState(ProductsDummy);
@@ -14,7 +15,7 @@ export default function SelectedProductListCmp() {
         }
         if (param == 2) {
             console.log("Option 2 is selected");
-            setProductList(ProductsDummy);
+            setProductList(ProductsDummyTwo);
          }
         if (param == 3) {
             console.log("Option 3 is selected");
@@ -30,15 +31,15 @@ export default function SelectedProductListCmp() {
           <div className="Line"></div>
         </div>
         <div className="SelectedProductListCmpMenuLink">
-          <a href="" onClick={() => handleClick(1)}>
+          <button  onClick={() => handleClick(1)}>
             جدید
-          </a>
-          <a href="" onClick={() => handleClick(2)}>
+          </button>
+          <button  onClick={() => handleClick(2)}>
             پرفروش ترین
-          </a>
-          <a href="" onClick={() => handleClick(3)}>
+          </button>
+          <button  onClick={() => handleClick(3)}>
             محبوب ترین
-          </a>
+          </button>
         </div>
         <div className="Productlist">
           {ProductList.map((Product, Id) => (

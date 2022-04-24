@@ -8,6 +8,7 @@ import BgLogoParrallax from './Components/BgLogoParrallax/BgLogoParrallax';
 import PopularProductListCom from './Components/PopularProductListComponent/PopularProductListCom';
 import AboutCmp from './Components/AboutComponent/AboutCmp';
 import SelectedProductListCmp from './Components/SelectedProductListComponent/SelectedProductListCmp';
+import AdvertismentCmp from './Components/Advertisment/AdvertismentCmp';
 function App() {
   return (
     <Fragment>
@@ -17,7 +18,8 @@ function App() {
       <CategorylistCmp />
       <PopularProductListCom />
       <AboutCmp />
-      <SelectedProductListCmp/>
+      <SelectedProductListCmp />
+      <AdvertismentCmp/>
     </Fragment>
   ); 
 }
