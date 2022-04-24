@@ -8,8 +8,8 @@ export default function AdvertismentCmp() {
         <Advertismentpanelcmp
           w="50%"
           h="100px"
-          TextHead="این تست است"
-          Textsubhead="این تست است"
+          TextHead="بهترین پیشنهاد صندلی اداری"
+          Textsubhead="تخفیف عالی اینجا"
           Imgsrc="/assets/Banners/B1.jpg"
           link="#"
         />
@@ -17,8 +17,8 @@ export default function AdvertismentCmp() {
         <Advertismentpanelcmp
           w="50%"
           h="100px"
-          TextHead="این تست است"
-          Textsubhead="این تست است"
+          TextHead="بهترین پیشنهاد صندلی اداری"
+          Textsubhead="تخفیف عالی اینجا"
           Imgsrc="/assets/Banners/B2.jpg"
           link="#"
         />

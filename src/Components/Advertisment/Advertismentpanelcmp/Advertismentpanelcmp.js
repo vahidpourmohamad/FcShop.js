@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import "./Advertismentpanelcmp.css";
 export default function Advertismentpanelcmp(probs) {
-    const { TextHead, Imgsrc, Textsubhead, Link,w,h } = probs;
+  const { TextHead, Imgsrc, Textsubhead, Link, w, h } = probs;
 
   return (
     <div className="AdvertismentpanelcmpContainer">
@@ -10,10 +10,10 @@ export default function Advertismentpanelcmp(probs) {
         style={{ backgroundImage: "url(" + Imgsrc + ")" }}
       >
         <div className="shine"></div>
+        <div className="overlay"></div>
         <div className="Borderinner"></div>
-
-        <div className="TextHead">{TextHead}</div>
         <div className="TextSub">{Textsubhead}</div>
+        <div className="TextHead">{TextHead}</div>
       </div>
     </div>
   );
