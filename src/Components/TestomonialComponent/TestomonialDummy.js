@@ -1,0 +1,38 @@
+export const TestomonialDummy = [
+  {
+    id: "1",
+    Author: "محمد قنبری",
+    Rate: "5",
+    Text: "خیلی عالی بود",
+    ProductName: "مبلمان چرم",
+    date: "1.0.1",
+    approved: "1",
+  },
+  {
+    id: "2",
+    Author: "کاربر",
+    Rate: "5",
+    Text: "خیلی عالی بود",
+    ProductName: "مبلمان چرم",
+    date: "1.0.1",
+    approved: "1",
+  },
+  {
+    id: "3",
+    Author: "ناشناس",
+    Rate: "5",
+    Text: "خیلی عالی بود",
+    ProductName: "مبلمان چرم",
+    date: "1.0.1",
+    approved: "1",
+  },
+  {
+    id: "4",
+    Author: "کمالی",
+    Rate: "5",
+    Text: "خیلی عالی بود",
+    ProductName: "مبلمان چرم",
+    date: "1.0.1",
+    approved: "1",
+  },
+];

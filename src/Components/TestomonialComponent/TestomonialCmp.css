@@ -30,4 +30,8 @@
     inset -0px -10px 8px 0px rgba(0, 0, 0, 0.78);
   box-shadow: inset 0px 10px 8px 0px rgba(0, 0, 0, 0.78),
     inset -0px -10px 8px 0px rgba(0, 0, 0, 0.78);
+display: flex;
+flex: row ;
+justify-content: space-around;
+align-items: center;
 }
