@@ -41,7 +41,7 @@
 @keyframes shine {
   0%,
   100% {
-    margin-top: -100px;
+    margin-top: -800px;
   }
   50% {
     margin-top: 800px;

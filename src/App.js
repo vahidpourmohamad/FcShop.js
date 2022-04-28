@@ -9,6 +9,9 @@ import PopularProductListCom from './Components/PopularProductListComponent/Popu
 import AboutCmp from './Components/AboutComponent/AboutCmp';
 import SelectedProductListCmp from './Components/SelectedProductListComponent/SelectedProductListCmp';
 import AdvertismentCmp from './Components/Advertisment/AdvertismentCmp';
+import Promotionproductscmp from './Components/PromotionProducts/Promotionproductscmp';
+import Blogpostlistcmp from './Components/BlogPostsListComponenet/Blogpostlistcmp';
+import TestomonialCmp from './Components/TestomonialComponent/TestomonialCmp';
 function App() {
   return (
     <Fragment>
@@ -19,7 +22,10 @@ function App() {
       <PopularProductListCom />
       <AboutCmp />
       <SelectedProductListCmp />
-      <AdvertismentCmp/>
+      <AdvertismentCmp />
+      <Promotionproductscmp BackgroundImage="/assets/Banners/Goldback.png" />
+      <TestomonialCmp />
+      <Blogpostlistcmp />
     </Fragment>
   ); 
 }

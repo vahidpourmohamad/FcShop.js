@@ -1,0 +1,34 @@
+.BlogpostlistcmpContainer {
+  width: 100%;
+  margin-top: 50px;
+  
+}
+.BlogpostlistcmpParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.BlogpostlistcmpHeading {
+  display: flex;
+  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.BlogpostlistcmpHeadingText {
+  font-size: 2rem;
+}
+.Line {
+  width: 150px;
+  height: 47px;
+  border-top: 4px solid var(--main);
+}
+.Bloglist{
+    width: 85%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

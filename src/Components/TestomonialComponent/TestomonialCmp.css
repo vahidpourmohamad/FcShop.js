@@ -1,0 +1,33 @@
+.TestParallax-Container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: 250px;
+  width: 100%;
+  min-height: fit-content;
+}
+.TesParallax-parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.TesParallax-Parallax {
+  background-image: url("../../Assets/Images/bglogo.png");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 10px 8px 0px rgba(0, 0, 0, 0.78),
+    inset -0px -10px 8px 0px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: inset 0px 10px 8px 0px rgba(0, 0, 0, 0.78),
+    inset -0px -10px 8px 0px rgba(0, 0, 0, 0.78);
+  box-shadow: inset 0px 10px 8px 0px rgba(0, 0, 0, 0.78),
+    inset -0px -10px 8px 0px rgba(0, 0, 0, 0.78);
+}

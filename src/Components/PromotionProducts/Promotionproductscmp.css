@@ -1,0 +1,38 @@
+.PromotionproductcmpContainer {
+   background-color: rgba(255,255, 255, 0.7);
+  width: 100%;
+  margin-top: 50px;
+  background-size: contain;
+  background-repeat: repeat-x;
+ 
+}
+.PromotionproductcmpParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.PromotionproductcmpHeading {
+  display: flex;
+  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.PromotionproductcmpHeadingText {
+  font-size: 2rem;
+}
+.Line {
+  width: 150px;
+  height: 47px;
+  border-top: 4px solid var(--main);
+}
+.PromotionproductcmpProductlist{
+padding: 20px 20px 20px 20px;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-content: space-between;
+flex-wrap: wrap;
+}
