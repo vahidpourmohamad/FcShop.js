@@ -12,6 +12,7 @@ import AdvertismentCmp from './Components/Advertisment/AdvertismentCmp';
 import Promotionproductscmp from './Components/PromotionProducts/Promotionproductscmp';
 import Blogpostlistcmp from './Components/BlogPostsListComponenet/Blogpostlistcmp';
 import TestomonialCmp from './Components/TestomonialComponent/TestomonialCmp';
+import FooterCmp from './Components/FooterComponent/FooterCmp';
 function App() {
   return (
     <Fragment>
@@ -26,6 +27,7 @@ function App() {
       <Promotionproductscmp BackgroundImage="/assets/Banners/Goldback.png" />
       <TestomonialCmp />
       <Blogpostlistcmp />
+      <FooterCmp/>
     </Fragment>
   ); 
 }

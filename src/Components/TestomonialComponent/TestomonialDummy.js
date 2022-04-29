@@ -11,7 +11,7 @@ export const TestomonialDummy = [
   {
     id: "2",
     Author: "کاربر",
-    Rate: "5",
+    Rate: "4",
     Text: "خیلی عالی بود",
     ProductName: "مبلمان چرم",
     date: "1.0.1",
@@ -29,7 +29,7 @@ export const TestomonialDummy = [
   {
     id: "4",
     Author: "کمالی",
-    Rate: "5",
+    Rate: "3",
     Text: "خیلی عالی بود",
     ProductName: "مبلمان چرم",
     date: "1.0.1",
