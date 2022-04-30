@@ -172,3 +172,34 @@
   margin-top: 10px;
   width: 100%;
 }
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+.CategorylistCmpCardContainer{
+  flex-direction: column-reverse;
+  margin:0px;
+  width: 100%;
+}
+.CategorylistCmpCardContainerL{
+  width: 100%;
+}
+.CategorylistCmpCardContainerR{
+  width: 100%;
+}
+.card1 {
+  margin: 10px;
+}
+.card2 {
+  margin: 10px;
+}
+.card3 {
+  margin: 10px;
+}
+.card4 {
+  margin: 10px;
+}
+.card5 {
+  margin: 10px;
+}
+}
