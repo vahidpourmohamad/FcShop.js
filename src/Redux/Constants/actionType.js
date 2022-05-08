@@ -1,5 +1,7 @@
 export const ActionTypes = {
-  SET_PRODUCTS: "SET_PRODUCTS",
-  SELECTED_PRODUCT: "SELECTED_PRODUCT",
+  GetAllProducts: "GET_ALL_PRODUCTS",
+  SelectedProduct: "SELECTED_PRODUCT",
+  GetCategories: "GET_CATEGORIES",
+  GetProductsCategory: "GET_PRODUCTS_CATEGORY",
   REMOVE_SELECTED_PRODUCT: "REMOVE_SELECTED_PRODUCT",
 };
