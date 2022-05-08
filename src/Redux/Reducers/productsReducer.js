@@ -12,6 +12,7 @@ export const productReducer = (state= initialState, { type, payload }) => {
     case ActionTypes.GetProductsCategory:
       return state;
     default:
-      break;
+       return state;
   }
 };
+export default productReducer

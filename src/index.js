@@ -6,13 +6,31 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './Redux/Store';
 
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client';
+import { ErrorLink, onError, OnError } from '@apollo/client/link/error';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const errorLink = onError(({ graphqlErrors, networkErrors }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql Error ${message} ${location} ${path}`);
+    })
+  }
+});
+
+
+const link = from([errorLink, new HttpLink({ uri: "" })]);
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link:link
+})
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <ApolloProvider client={client}>
+    <React.StrictMode>
       <App />
-    </Provider>
-  </React.StrictMode>
+    </React.StrictMode>
+  </ApolloProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
