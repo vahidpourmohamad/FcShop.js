@@ -1,9 +1,21 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./PopularProductListCom.css";
 import { ProductsDummy } from "./ProductlistDummy";
 import ProductCardCmp from "../ProductCardComponent/ProductCardCmp";
+import { useQuery, gql } from "@apollo/client";
+import { getProductsGQL } from "../../GraphQl/Queries";
+
 
 export default function PopularProductListCom() {
+  const { error, loading, data } = useQuery(getProductsGQL);
+  useEffect(() => {
+    
+    console.log(data);
+    return () => {
+      console.log("finish");
+    };
+  }, [data]);
+  
   return (
     <div className="PopularProductListComContainer">
       <div className="PopularProductListComParent">
