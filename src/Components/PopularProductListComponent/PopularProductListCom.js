@@ -1,21 +1,27 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import "./PopularProductListCom.css";
 import { ProductsDummy } from "./ProductlistDummy";
 import ProductCardCmp from "../ProductCardComponent/ProductCardCmp";
 import { useQuery, gql } from "@apollo/client";
 import { getProductsGQL } from "../../GraphQl/Queries";
 
-
 export default function PopularProductListCom() {
   const { error, loading, data } = useQuery(getProductsGQL);
   useEffect(() => {
-    
-    console.log(data);
+    if (!loading && !error) {
+      console.log(data);
+      data.getProducts.map((item, id) => {
+        console.log(item);
+      });
+    }
     return () => {
-      console.log("finish");
+      // console.log(data);
+      // console.log(getProducts[0]);
     };
   }, [data]);
-  
+
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
   return (
     <div className="PopularProductListComContainer">
       <div className="PopularProductListComParent">
@@ -26,14 +32,14 @@ export default function PopularProductListCom() {
           <div className="Line"></div>
         </div>
         <div className="Productlist">
-          {ProductsDummy.map((Product, Id) => (
+          {data.getProducts.map((Product, Id) => (
             <ProductCardCmp
               Id={Product.Id}
-              Pname={Product.Pname}
-              Price={Product.Price}
-              Discount={Product.Discount}
-              imgone={Product.imgone}
-              imgtwo={Product.imgtwo}
+              Pname={Product.name}
+              Price={Product.price}
+              Discount={50}
+              imgone={Product.images[0]}
+              imgtwo={Product.images[1]}
             />
           ))}
         </div>
