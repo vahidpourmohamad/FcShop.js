@@ -47,7 +47,7 @@ root.render(
         <Route path="/UberSeite" element={<Uber />} />
         <Route path="/BloggenSeite" element={<Bloggen />} />
         <Route path="/KontaktSeite" element={<Kontakt />} />
-        <Route path="/ProduktSeite" element={<ProduktSichtSeite />} />
+        <Route path="/ProduktSeite/:id" element={<ProduktSichtSeite />} />
 
         <Route
           path="*"

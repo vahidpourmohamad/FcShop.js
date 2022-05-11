@@ -27,7 +27,7 @@ function Heim() {
       <AboutCmp />
       <SelectedProductListCmp />
       <AdvertisementCmp />
-      <Promotionproductscmp BackgroundImage="../../assets/Banners/Goldback.png" />
+      <Promotionproductscmp BackgroundImage="../../assets/Banners/bg.jpg" />
       <TestomonialCmp />
       <Blogpostlistcmp />
       <FooterCmp />

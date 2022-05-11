@@ -1,0 +1,15 @@
+.ProduktKörper{
+display: flex;
+flex-direction: row;
+width: 100%;
+justify-content: center;
+
+}
+.ProduktBilds
+{
+    width: 45%;
+
+}
+.ProduktkurzehBeschreibung{
+width:55%;
+}

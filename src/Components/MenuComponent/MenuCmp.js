@@ -4,6 +4,7 @@ import Logo from "../../Assets/Images/logo.png";
 import { Link } from "react-router-dom";
 
 export default function MenuCmp() {
+  const t = "627a7f83a1ef622dc1e466e0";
   return (
     <div className="MenucmpContainer" dir="rtl">
       <div className="MenucmpParent">
@@ -19,7 +20,7 @@ export default function MenuCmp() {
             </li>
             <li>
               <a href="#">
-                <Link to="/ProduktSeite">Prüfung</Link>
+                <Link to={`/ProduktSeite/${t}`} key={t}>Prüfung</Link>
               </a>
             </li>
             <li>
