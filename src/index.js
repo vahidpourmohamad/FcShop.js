@@ -1,37 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Heim from "./Seiten/Heim/HeimSeite"
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import store from './Redux/Store';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+
+import reportWebVitals from "./reportWebVitals";
+// import { Provider } from 'react-redux';
+// import store from './Redux/Store';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+// * Seiten Komponenten
+import Anmeldung from "./Seiten/Anmeldung/AnmeldungSeite.js";
+import Heim from "./Seiten/Heim/HeimSeite";
+import Bloggen from "./Seiten/Bloggen/BloggenSeite";
+import Kontakt from "./Seiten/Kontakt/KontaktSeite";
+import Uber from "./Seiten/Uber/UberSeite";
 
-import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client';
-import { ErrorLink, onError, OnError } from '@apollo/client/link/error';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   if (graphqlErrors) {
     graphqlErrors.map(({ message, location, path }) => {
       alert(`Graphql Error ${message} ${location} ${path}`);
-    })
+    });
   }
 });
-
 
 const link = from([errorLink, new HttpLink({ uri: "http://127.0.0.1:10000" })]);
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link:link
-})
+  link: link,
+});
 root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <React.StrictMode>
-        <Heim />
-      </React.StrictMode>
+      <Routes>
+        <Route path="/" element={<Heim />} />
+        <Route path="/UberSeite" element={<Uber />} />
+        <Route path="/BloggenSeite" element={<Bloggen />} />
+        <Route path="/KontaktSeite" element={<Kontakt />} />
+      </Routes>
     </BrowserRouter>
   </ApolloProvider>
 );

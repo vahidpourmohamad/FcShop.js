@@ -1,6 +1,7 @@
 import React from "react";
 import "./MenuCmp.css";
 import Logo from "../../Assets/Images/logo.png";
+import { Link } from "react-router-dom";
 
 export default function MenuCmp() {
   return (
@@ -12,24 +13,18 @@ export default function MenuCmp() {
         <div className="MenuIteam">
           <ul>
             <li>
-              <a href="#" >
-                خانه
+              <a href="#">
+                <Link to="/">خانه</Link>
               </a>
             </li>
             <li>
-              <a href="#" >
-                درباره ما
-              </a>
+              <Link to="/UberSeite">درباره ما</Link>
             </li>
             <li>
-              <a href="#" >
-                بلاگ
-              </a>
+              <Link to="/BloggenSeite">بلاگ</Link>
             </li>
             <li>
-              <a href="#" >
-                تماس با ما
-              </a>
+              <a href="/KontaktSeite">تماس با ما</a>
             </li>
           </ul>
         </div>

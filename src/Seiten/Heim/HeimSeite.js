@@ -8,11 +8,14 @@ import BgLogoParrallax from "../../Components/BgLogoParrallax/BgLogoParrallax";
 import PopularProductListCom from "../../Components/PopularProductListComponent/PopularProductListCom";
 import AboutCmp from "../../Components/AboutComponent/AboutCmp";
 import SelectedProductListCmp from "../../Components/SelectedProductListComponent/SelectedProductListCmp";
-import AdvertismentCmp from "../../Components/Advertisment/AdvertismentCmp";
+import AdvertisementCmp from "../../Components/Advertisment/AdvertismentCmp";
 import Promotionproductscmp from "../../Components/PromotionProducts/Promotionproductscmp";
 import Blogpostlistcmp from "../../Components/BlogPostsListComponenet/Blogpostlistcmp";
 import TestomonialCmp from "../../Components/TestomonialComponent/TestomonialCmp";
 import FooterCmp from "../../Components/FooterComponent/FooterCmp";
+
+
+
 function Heim() {
   return (
     <Fragment>
@@ -23,7 +26,7 @@ function Heim() {
       <PopularProductListCom />
       <AboutCmp />
       <SelectedProductListCmp />
-      <AdvertismentCmp />
+      <AdvertisementCmp />
       <Promotionproductscmp BackgroundImage="../../assets/Banners/Goldback.png" />
       <TestomonialCmp />
       <Blogpostlistcmp />
