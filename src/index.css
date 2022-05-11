@@ -19,6 +19,51 @@ body {
   background-size: contain;
       box-shadow: 0 5px 50px 0 rgb(33 33 33 / 20%);
 }
+.TextRTl{
+  text-align:justify;
+  direction: rtl;
+}
+.Container-Center
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.Hauptfarbe{
+color: var(--main);
+}
+.Schwarz{
+  color:black;
+}
+.weise{
+  color:white
+}
+.font-s{
+font-size: 0.85rem;
+}
+.font-m{
+font-size: 1rem;
+}
+.font-l{
+font-size: 1.3rem;
+}
+.font-b{
+font-weight: bold;
+}
+.font-xs{
+font-size: 0.5rem;
+}
+.font-xl{
+  font-size: 1.5rem;
+}
+.font-xxl{
+  font-size: 1.8rem;
+}
+.font-xxxl{
+  font-size: 2rem;
+}
 @font-face {
     font-family: "IRANSansDN";
     src: url("../src/Assets/Fonts/IRANSansDN.ttf") format("woff");
