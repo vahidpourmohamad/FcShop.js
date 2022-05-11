@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Heim from "./Seiten/Heim/HeimSeite"
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './Redux/Store';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client';
 import { ErrorLink, onError, OnError } from '@apollo/client/link/error';
@@ -27,9 +28,11 @@ const client = new ApolloClient({
 })
 root.render(
   <ApolloProvider client={client}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <BrowserRouter>
+      <React.StrictMode>
+        <Heim />
+      </React.StrictMode>
+    </BrowserRouter>
   </ApolloProvider>
 );
 

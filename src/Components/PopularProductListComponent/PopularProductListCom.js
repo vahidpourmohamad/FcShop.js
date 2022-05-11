@@ -10,7 +10,8 @@ export default function PopularProductListCom() {
   useEffect(() => {
     if (!loading && !error) {
       console.log(data);
-      data.getProducts.map((item, id) => {
+      const { getProducts } =  data;
+      getProducts.map((item, id) => {
         console.log(item);
       });
     }
