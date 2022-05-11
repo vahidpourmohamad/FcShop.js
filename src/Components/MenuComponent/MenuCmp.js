@@ -18,6 +18,11 @@ export default function MenuCmp() {
               </a>
             </li>
             <li>
+              <a href="#">
+                <Link to="/ProduktSeite">Prüfung</Link>
+              </a>
+            </li>
+            <li>
               <Link to="/UberSeite">درباره ما</Link>
             </li>
             <li>

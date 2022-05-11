@@ -12,6 +12,8 @@ import Heim from "./Seiten/Heim/HeimSeite";
 import Bloggen from "./Seiten/Bloggen/BloggenSeite";
 import Kontakt from "./Seiten/Kontakt/KontaktSeite";
 import Uber from "./Seiten/Uber/UberSeite";
+import ProduktSichtSeite from "./Seiten/ProduktSicht/ProduktSichtSeite";
+
 
 import {
   ApolloClient,
@@ -45,6 +47,16 @@ root.render(
         <Route path="/UberSeite" element={<Uber />} />
         <Route path="/BloggenSeite" element={<Bloggen />} />
         <Route path="/KontaktSeite" element={<Kontakt />} />
+        <Route path="/ProduktSeite" element={<ProduktSichtSeite />} />
+
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>Nichts drin , Kommen sie zurück , 404 Error</p>
+            </main>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </ApolloProvider>
