@@ -18,17 +18,35 @@ export default function ProduktSichtSeite() {
         <div className="ProduktKörper">
           <div className="ProduktBilds">test</div>
           <div className="ProduktkurzehBeschreibung">
-            <div className="font-m">دسترسی</div>
-            <div className="font-xxl">{name}</div>
-
-            <div className="font-m">{price}</div>
-
-            <div className="font-l TextRTl">{desc}</div>
+            <div className="font-xxl TextRTl">{name}</div>
             <div className="Zweihintereinader">
-              <div className="font-s">رنگ</div>
-              <div className="font-s">رنگ</div>
+              <div className="font-m TextRTl"> قیمت: </div>
+
+              <div className="font-m TextRTl">{price}</div>
             </div>
-            <div className="font-s">دسته بندی</div>
+            <div className="font-m TextRTl">{desc}</div>
+            <div className="Zweihintereinader">
+              <div className="font-s TextRTl">رنگ</div>
+              {colors.map((color, index) => (
+                <div
+                  key={index}
+                  className=" color-box TextRTl  "
+                  style={{ backgroundColor: color }}
+                ></div>
+              ))}
+            </div>
+            <div className="Zweihintereinader">
+              <div className="font-s TextRTl">دسته بندی</div>
+              <div className="font-s TextRTl">
+                <a style={{ cursor: "pointer", color: "var(--main)" }}>
+                  {category}
+                </a>{" "}
+              </div>
+            </div>
+            <div className="Zweihintereinader">
+              <div className="font-s TextRTl">دسترسی</div>
+              <div className="font-s TextRTl">{status}</div>
+            </div>
           </div>
         </div>
       </div>

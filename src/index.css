@@ -19,10 +19,20 @@ body {
   background-size: contain;
       box-shadow: 0 5px 50px 0 rgb(33 33 33 / 20%);
 }
+
 .TextRTl{
   text-align:justify;
   direction: rtl;
+  margin: 2px;
 }
+.color-box{
+  height: 15px;
+  width: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid black;
+}
+
 .Container-Center
 {
   width: 100%;

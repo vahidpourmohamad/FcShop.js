@@ -1,33 +1,30 @@
-.ProduktKörper{
-display: flex;
-flex-direction: row;
-width: 70%;
-justify-content: center;
-align-items: center;
-margin-top: 50px;
-margin-bottom: 50px;
-height: 400px;
+.ProduktKörper {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 350px;
 }
-.ProduktBilds
-{
-    width: 45%;
-    align-items: flex-end;
-
+.ProduktBilds {
+  width: 45%;
+  align-items: flex-end;
 }
-.ProduktkurzehBeschreibung{
-width:55%;
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: flex-end;
-text-align: justify;
-height: 100%;
+.ProduktkurzehBeschreibung {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: justify;
 }
-.Zweihintereinader{
-display: flex;
-direction: rtl;
-flex-direction: row;
-justify-content: flex-start;
-align-content: space-between;
-width: 50%;
+.Zweihintereinader {
+  display: flex;
+  direction: rtl;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: space-between;
+  width: 50%;
 }
