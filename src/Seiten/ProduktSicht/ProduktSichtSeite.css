@@ -11,6 +11,40 @@
 .ProduktBilds {
   width: 45%;
   align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ProduktHauptbild {
+  height: 300;
+  border: 1px solid #ddd;
+  width: 80%;
+  margin: 20px;
+}
+
+.ProduktHauptbild img {
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.ProduktHauptbild img:hover {
+  transform: scale(1.1);
+}
+.ProduktBildergalerie img:hover {
+  transform: scale(1.1);
+}
+.ProduktBildergalerie img {
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.ProduktBildergalerie {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+  width: 80%;
+  border: 1px solid #ddd;
 }
 .ProduktkurzehBeschreibung {
   width: 55%;
@@ -27,4 +61,76 @@
   justify-content: flex-start;
   align-content: space-between;
   width: 50%;
+}
+.Produkt-sicht-Button-Box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  width: 90%;
+  align-self: center;
+  margin-top: 10px;
+}
+.Produkt-sicht-Einkaufskarte-Button {
+  margin: 7px;
+  display: inline-block;
+  line-height: 50px;
+  text-transform: capitalize;
+  padding: 0 50px;
+  background: var(--main);
+  color: var(--white);
+  transition: ease-in-out 0.5s;
+}
+.Produkt-sicht-Teilen-Button {
+  margin: 7px;
+  display: inline-block;
+  line-height: 50px;
+  text-transform: capitalize;
+  padding: 0 10px;
+  background: var(--main);
+  color: var(--white);
+  transition: ease-in-out 0.5s;
+}
+
+.Produkt-sicht-Nummer-Spinner {
+  margin: 7px;
+  display: flex;
+  width: 90px;
+  height: 50px;
+  border: 1px solid #ddd;
+}
+.Produkt-sicht-Teilen-Button-h:hover {
+  background-color: var(--dark-blue);
+}
+.Produkt-sicht-Eingang-Einkaufskarte {
+  height: 100%;
+  width: 40%;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  color: var(--main);
+  font-size: 30px;
+  font-weight: 400;
+  border: 0;
+  outline: none;
+  padding: 0;
+  text-align: center;
+}
+
+.Produkt-sicht-button {
+  height: 100%;
+  width: 30%;
+  display: block;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  outline: none;
+  border: 0;
+  background: transparent;
+  color: var(--main);
 }

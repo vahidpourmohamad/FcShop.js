@@ -14,5 +14,5 @@ export const dummy = {
   ],
   category: "مبلمان باغی",
   status: "در انبار",
-  images: ["p1a", "p2a", "p3a"],
+  images: ["p1a.png", "p2a.png", "p3a.png"],
 };

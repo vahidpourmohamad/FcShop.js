@@ -19,11 +19,19 @@ body {
   background-size: contain;
       box-shadow: 0 5px 50px 0 rgb(33 33 33 / 20%);
 }
-
+.font-bold{
+  font-weight: 600;
+}
+.font-normal{
+  font-weight: 400;
+}
+.font-thin{
+  font-weight: 200;
+}
 .TextRTl{
   text-align:justify;
   direction: rtl;
-  margin: 2px;
+  margin: 4px;
 }
 .color-box{
   height: 15px;
@@ -89,6 +97,7 @@ a,
 u {
   text-decoration: none !important;
   color: black ; 
+  cursor: pointer !important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
