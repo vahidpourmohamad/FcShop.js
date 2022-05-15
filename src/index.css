@@ -41,13 +41,22 @@ body {
   border: 1px solid black;
 }
 
-.Container-Center
+.Container-Center-row
 {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+.Container-Center-col
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
 }
 .Hauptfarbe{
 color: var(--main);

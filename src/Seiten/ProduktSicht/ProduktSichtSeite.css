@@ -134,3 +134,12 @@
   background: transparent;
   color: var(--main);
 }
+.ProduktBeschreibung{
+  margin-top: 20px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+.Kommentaren{
+    margin-top: 20px;
+  width: 80%;
+}
