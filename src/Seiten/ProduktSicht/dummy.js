@@ -15,4 +15,18 @@ export const dummy = {
   category: "مبلمان باغی",
   status: "در انبار",
   images: ["p1a.png", "p2a.png", "p3a.png"],
+  features: [
+    {
+      Featurename: "Model",
+      value: "LK5 PRO",
+    },
+    {
+      Featurename: "Technology",
+      value: "FDM",
+    },
+    {
+      Featurename: "Movement",
+      value: "Cartesian",
+    },
+  ],
 };

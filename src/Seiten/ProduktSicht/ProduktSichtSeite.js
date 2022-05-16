@@ -9,6 +9,7 @@ import { dummy } from "./dummy";
 import { useState } from "react";
 import Kommentarkomponente from "../../Components/Kommentarkomponente/Kommentarkomponente";
 import { commentdummy } from "../../Components/Kommentarkomponente/dummy.js";
+import Produkteigenschaften from "../../Components/Produkteigenschaften/Produkteigenschaften";
 export default function ProduktSichtSeite() {
   const [ProduktNummer, setProduktNummer] = useState(1);
   const [ProduktBildIndex, setProduktBildIndex] = useState(0);
@@ -24,7 +25,8 @@ export default function ProduktSichtSeite() {
     setProduktNummer(temp);
   }
   const params = useParams();
-  const { name, price, desc, colors, category, status, images } = dummy;
+  const { name, price, desc, colors, category, status, images, features } =
+    dummy;
   return (
     <Fragment>
       <MenuCmp />
@@ -116,6 +118,11 @@ export default function ProduktSichtSeite() {
           <div className="font-xl font-bold">معرفی</div>
           <div className="Line"></div>
           <div className="font-m TextRTl">{desc}</div>
+        </div>
+        <div className="Kommentaren Container-Center-col ">
+          <div className="font-xl font-bold TextRTl">مشخصات فنی</div>
+          <div className="Line"></div>
+          <Produkteigenschaften features={features}></Produkteigenschaften>
         </div>
 
         <div className="Kommentaren Container-Center-col ">
