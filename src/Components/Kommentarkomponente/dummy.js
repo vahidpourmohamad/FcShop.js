@@ -6,7 +6,7 @@ export const commentdummy = [
     KommentarBody: "این یک متن تست می باشد ",
     createDate: "12/5/1",
     KommentarThema: "این خوب بود",
-    Stark: ["قوی", "قوی", "قوی", "قوی"],
+    Stark: [],
     schwache: ["ضعف", "ضعف", "ضعف", "ضعف"],
   },
   {
@@ -17,7 +17,7 @@ export const commentdummy = [
     createDate: "12/5/1",
     KommentarThema: "این خوب بود",
     Stark: ["قوی", "قوی", "قوی", "قوی"],
-    schwache: ["ضعف", "ضعف", "ضعف", "ضعف"],
+    schwache: ["ضعف", , "ضعف", "ضعف"],
   },
   {
     BenutzerName: "محمد امیر",

@@ -17,19 +17,37 @@
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
+   margin-bottom: 10px;
   min-height: 75px;
   justify-content: flex-start;
-  border: solid #dddd 1px;
-  border-radius: 10px;
+ 
 }
 .KommentarKomponenteStark {
   color: green;
   width: 25%;
   margin-top: 10px;
-  border: solid #dddd 1px;
-  border-radius: 10px;
   margin-left: 5px;
   margin-right: 5px;
-  min-height: 75px;
+  margin-bottom: 10px;
+  min-height: 100px;
   justify-content: flex-start;
+}
+.LikeKommentarbutton{
+    border: 0px;
+    margin:0px;
+    transform: scale(0.8);
+    transition: ease-in-out 0.3s;
+}
+.LikeKommentarbutton:hover{
+    transform: scale(1);
+}
+.WieAbneigungContainer{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: 5px;
+    margin-left: 5px;
+  
 }
