@@ -27,6 +27,25 @@ export default function ProduktSichtSeite() {
   const params = useParams();
   const { name, price, desc, colors, category, status, images, features } =
     dummy;
+  const [ProdukteigenschaftenShow, setProdukteigenschaftenShow] =
+    React.useState(false);
+  function ProdukteigenschaftenShowClick() {
+    if (ProdukteigenschaftenShow == true) {
+      setProdukteigenschaftenShow(false);
+    } else {
+      setProdukteigenschaftenShow(true);
+    }
+  }
+
+  const [KommentarkomponenteShow, setKommentarkomponenteShow] =
+    React.useState(false);
+  function KommentarkomponenteShowClick() {
+    if (KommentarkomponenteShow == true) {
+      setKommentarkomponenteShow(false);
+    } else {
+      setKommentarkomponenteShow(true);
+    }
+  }
   return (
     <Fragment>
       <MenuCmp />
@@ -122,13 +141,41 @@ export default function ProduktSichtSeite() {
         <div className="Kommentaren Container-Center-col ">
           <div className="font-xl font-bold TextRTl">مشخصات فنی</div>
           <div className="Line"></div>
-          <Produkteigenschaften features={features}></Produkteigenschaften>
+          <a
+            className="ProdukteigenschaftenShow"
+            onClick={ProdukteigenschaftenShowClick}
+          >
+            {ProdukteigenschaftenShow ? "عدم نمایش" : "نمایش"}
+          </a>
+          {ProdukteigenschaftenShow ? (
+            <Produkteigenschaften features={features}></Produkteigenschaften>
+          ) : null}
         </div>
 
         <div className="Kommentaren Container-Center-col ">
           <div className="font-xl font-bold TextRTl">نظرات</div>
           <div className="Line"></div>
-          {commentdummy.map((Kommentar, Id) => (
+          <a
+            className="ProdukteigenschaftenShow"
+            onClick={KommentarkomponenteShowClick}
+          >
+            {KommentarkomponenteShow ? "عدم نمایش" : "نمایش"}
+          </a>
+          {KommentarkomponenteShow
+            ? commentdummy.map((Kommentar, Id) => (
+                <Kommentarkomponente
+                  BenutzerName={Kommentar.BenutzerName}
+                  BenutzerId={Kommentar.BenutzerId}
+                  ProduktId={Kommentar.ProduktId}
+                  KommentarBody={Kommentar.KommentarBody}
+                  createDate={Kommentar.createDate}
+                  KommentarThema={Kommentar.KommentarThema}
+                  Stark={Kommentar.Stark}
+                  schwache={Kommentar.schwache}
+                ></Kommentarkomponente>
+              ))
+            : null}
+          {/* {commentdummy.map((Kommentar, Id) => (
             <Kommentarkomponente
               BenutzerName={Kommentar.BenutzerName}
               BenutzerId={Kommentar.BenutzerId}
@@ -139,7 +186,7 @@ export default function ProduktSichtSeite() {
               Stark={Kommentar.Stark}
               schwache={Kommentar.schwache}
             ></Kommentarkomponente>
-          ))}
+          ))} */}
         </div>
       </div>
       <PromotionProduktenKomponente BackgroundImage="../../assets/Banners/bg.jpg" />

@@ -28,5 +28,9 @@ export const dummy = {
       Featurename: "Movement",
       value: "Cartesian",
     },
+    {
+      Featurename: "Movement",
+      value: "Cartesian",
+    },
   ],
 };

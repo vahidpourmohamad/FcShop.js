@@ -1,39 +1,39 @@
 body {
-    margin: 0;
-    font-family: var(--bs-font-sans-serif);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
-.MenüHintergrund{
+.MenüHintergrund {
   width: 100%;
   height: 100px;
   background-image: url("../src/Assets/Images/bg.jpg");
   background-size: contain;
-      box-shadow: 0 5px 50px 0 rgb(33 33 33 / 20%);
+  box-shadow: 0 5px 50px 0 rgb(33 33 33 / 20%);
 }
-.font-bold{
+.font-bold {
   font-weight: 600;
 }
-.font-normal{
+.font-normal {
   font-weight: 400;
 }
-.font-thin{
+.font-thin {
   font-weight: 200;
 }
-.TextRTl{
-  text-align:justify;
+.TextRTl {
+  text-align: justify;
   direction: rtl;
   margin: 4px;
+  position: relative;
 }
-.color-box{
+.color-box {
   height: 15px;
   width: 15px;
   margin-left: 5px;
@@ -41,16 +41,14 @@ body {
   border: 1px solid black;
 }
 
-.Container-Center-row
-{
+.Container-Center-row {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
-.Container-Center-col
-{
+.Container-Center-col {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -58,100 +56,109 @@ body {
   align-content: center;
   flex-direction: column;
 }
-.Hauptfarbe{
-color: var(--main);
+.Hauptfarbe {
+  color: var(--main);
 }
-.Schwarz{
-  color:black;
+.Schwarz {
+  color: black;
 }
-.weise{
-  color:white
+.weise {
+  color: white;
 }
-.font-s{
-font-size: 0.85rem;
+.font-s {
+  font-size: 0.85rem;
 }
-.font-m{
-font-size: 1rem;
+.font-m {
+  font-size: 1rem;
 }
-.font-l{
-font-size: 1.3rem;
+.font-l {
+  font-size: 1.3rem;
 }
-.font-b{
-font-weight: bold;
+.font-b {
+  font-weight: bold;
 }
-.font-xs{
-font-size: 0.5rem;
+.font-xs {
+  font-size: 0.5rem;
 }
-.font-xl{
+.font-xl {
   font-size: 1.5rem;
 }
-.font-xxl{
+.font-xxl {
   font-size: 1.8rem;
 }
-.font-xxxl{
+.font-xxxl {
   font-size: 2rem;
 }
 @font-face {
-    font-family: "IRANSansDN";
-    src: url("../src/Assets/Fonts/IRANSansDN.ttf") format("woff");
+  font-family: "IRANSansDN";
+  src: url("../src/Assets/Fonts/IRANSansDN.ttf") format("woff");
 }
 
 a,
 a:hover,
 a:focus {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a,
 u {
   text-decoration: none !important;
-  color: black ; 
+  color: black;
   cursor: pointer !important;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'IRANSansDN';
+  margin: 0;
+  padding: 0;
+  font-family: "IRANSansDN";
 }
 :root {
-    --main: #c2a773;
-    --orange: #fd5502;
-    --sky: #1bbde8;
-    --dark: #11161e;
-    --dark-blue: #151a32;
-    --grey: #606060;
-    --yellow: #ffc107;
-    --white: #fff;
-    
-    --bs-blue: #0d6efd;
-    --bs-indigo: #6610f2;
-    --bs-purple: #6f42c1;
-    --bs-pink: #d63384;
-    --bs-red: #dc3545;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ffc107;
-    --bs-green: #198754;
-    --bs-teal: #20c997;
-    --bs-cyan: #0dcaf0;
-    --bs-white: #fff;
-    --bs-gray: #6c757d;
-    --bs-gray-dark: #343a40;
-    --bs-primary: #0d6efd;
-    --bs-secondary: #6c757d;
-    --bs-success: #198754;
-    --bs-info: #0dcaf0;
-    --bs-warning: #ffc107;
-    --bs-danger: #dc3545;
-    --bs-light: #f8f9fa;
-    --bs-dark: #212529;
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --main: #c2a773;
+  --orange: #fd5502;
+  --sky: #1bbde8;
+  --dark: #11161e;
+  --dark-blue: #151a32;
+  --grey: #606060;
+  --yellow: #ffc107;
+  --white: #fff;
+
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
 }
-*,::after,::before{
-      box-sizing: border-box !important;
+*,
+::after,
+::before {
+  box-sizing: border-box !important;
 }
