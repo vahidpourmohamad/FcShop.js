@@ -1,9 +1,9 @@
 import jwtDecode from "jwt-decode";
-import { decode } from "jsonwebtoken";
+// import { decode } from "jsonwebtoken";
 import { createContext, useReducer } from "react";
 import React from 'react'
 
-export default function authProvider(props) {
+export default function AuthProvider(props) {
   const [state, dispatch] = useReducer(authReducer, initialState);
   const login = (userData) => {
     localStorage.setItem("token", userData.token);
@@ -57,4 +57,4 @@ function authReducer(state, action) {
       return state;
   }
 }
-export { AuthContext, authProvider };
+export { AuthContext, AuthProvider };

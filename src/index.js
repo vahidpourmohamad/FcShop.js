@@ -22,7 +22,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
-import { authProvider } from "./Context/AuthContext";
+import { AuthProvider } from "./Context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -51,7 +51,7 @@ const client = new ApolloClient({
 });
 
 root.render(
-  <authProvider>
+  <AuthProvider>
     <ApolloProvider client={client}>
       <BrowserRouter>
         <Routes>
@@ -71,7 +71,7 @@ root.render(
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
-  </authProvider>
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
