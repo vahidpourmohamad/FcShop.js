@@ -13,8 +13,6 @@ import Bloggen from "./Seiten/Bloggen/BloggenSeite";
 import Kontakt from "./Seiten/Kontakt/KontaktSeite";
 import Uber from "./Seiten/Uber/UberSeite";
 import ProduktSichtSeite from "./Seiten/ProduktSicht/ProduktSichtSeite";
-
-
 import {
   ApolloClient,
   InMemoryCache,
@@ -22,7 +20,9 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
+import { authProvider } from "./Context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -34,32 +34,44 @@ const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   }
 });
 
+const authlink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      authorization: localStorage.getItem("token") || "",
+    },
+  };
+});
+
 const link = from([errorLink, new HttpLink({ uri: "http://127.0.0.1:10000" })]);
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: link,
+  link: authlink.concat(link),
 });
-root.render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Heim />} />
-        <Route path="/UberSeite" element={<Uber />} />
-        <Route path="/BloggenSeite" element={<Bloggen />} />
-        <Route path="/KontaktSeite" element={<Kontakt />} />
-        <Route path="/ProduktSeite/:id" element={<ProduktSichtSeite />} />
 
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>Nichts drin , Kommen sie zurück , 404 Error</p>
-            </main>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
-  </ApolloProvider>
+root.render(
+  <authProvider>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Heim />} />
+          <Route path="/UberSeite" element={<Uber />} />
+          <Route path="/BloggenSeite" element={<Bloggen />} />
+          <Route path="/KontaktSeite" element={<Kontakt />} />
+          <Route path="/ProduktSeite/:id" element={<ProduktSichtSeite />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>Nichts drin , Kommen sie zurück , 404 Error</p>
+              </main>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </ApolloProvider>
+  </authProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
