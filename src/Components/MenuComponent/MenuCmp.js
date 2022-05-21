@@ -20,7 +20,9 @@ export default function MenuCmp() {
             </li>
             <li>
               <a href="#">
-                <Link to={`/ProduktSeite/${t}`} key={t}>Prüfung</Link>
+                <Link to={`/ProduktSeite/${t}`} key={t}>
+                  Prüfung
+                </Link>
               </a>
             </li>
             <li>
@@ -35,8 +37,12 @@ export default function MenuCmp() {
           </ul>
         </div>
         <div className="MenuIcon">
-          <a href="#" className="fa fa-user-o fa-2x "></a>
+          <a href="#">
+            <Link className="fa fa-user-o fa-2x " to="/login"></Link>
+          </a>
+
           <a href="#" className="fa fa-shopping-cart fa-2x "></a>
+
           <a href="#" className="fa fa-heart-o fa-2x "></a>
         </div>
       </div>

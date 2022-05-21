@@ -23,6 +23,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
 import { AuthProvider } from "./Context/AuthContext";
+import LoginSeite from "./Seiten/Login/LoginSeite";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -60,6 +61,7 @@ root.render(
           <Route path="/BloggenSeite" element={<Bloggen />} />
           <Route path="/KontaktSeite" element={<Kontakt />} />
           <Route path="/ProduktSeite/:id" element={<ProduktSichtSeite />} />
+          <Route path="/login" element={<LoginSeite />} />
           <Route
             path="*"
             element={
