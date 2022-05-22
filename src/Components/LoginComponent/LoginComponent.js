@@ -1,13 +1,60 @@
-import React, { Fragment } from "react";
+import { useMutation } from "@apollo/client";
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
+import { loginGQL } from "../../GraphQl/Mutations";
+
+import { useForm } from "../../Utility/Hooks";
 import "./LoginComponent.css";
 export default function LoginComponent() {
+  const context = useContext(AuthContext);
+  const [errors, setErrors] = useState([]);
+  const navigate = useNavigate();
+  const { onChange, onSubmit, values } = useForm(loginFunc, {
+    userName: "",
+    password: "",
+  });
+
+  const { userName, password } = values;
+
+  const [loginUser, { loading }] = useMutation(loginGQL, {
+    update(proxy, { data: { login: userData } }) {
+      console.log("userlogin2");
+      context.login(userData);
+      navigate("/");
+    },
+    onError({ graphQLErrors }) {
+      setErrors(graphQLErrors);
+      // console.log(errors);
+    },
+    variables: { username: userName, password: password },
+  });
+
+  function loginFunc() {
+    console.log("userLogin");
+    loginUser();
+  }
+
+  function errorPrint() {
+    console.log(errors);
+    return errors.map((error, id) => (
+      <div className="control">
+        <div class="notification is-danger ">
+          <button class="delete" onClick={errorClear}></button>
+          {error.message}
+        </div>
+      </div>
+    ));
+  }
+    const errorClear=(event)=> {
+     event.preventDefault();
+      setErrors([]);
+    }
   return (
     <Fragment>
       <div className="container">
         <div className="columns  is-multiline">
-          <div className="column is-8  is-offset-2 has-text-centered">
-            test
-          </div>
+          <div className="column is-8  is-offset-2 has-text-centered">test</div>
           <div className="column is-6 is-offset-3 register has-text-centered">
             <div className="columns">
               <div className="column  is-multiline left has-text-centered">
@@ -26,15 +73,17 @@ export default function LoginComponent() {
               <div className="column right has-text-centered">
                 <h1 className="title has-text-centered is-4">ورود کاربران</h1>
                 <p className="description">
-                  با ورود به وب سایت می توانید در تخفیف های مخصوص خود مطلع شوید{" "}
+                  با ورود به وب سایت می توانید در تخفیف های مخصوص خود مطلع شوید
                 </p>
-                <form>
+                <form className="box " onSubmit={onSubmit}>
                   <div className="field">
                     <div className="control">
                       <input
                         className="input is-medium"
                         type="text"
                         placeholder="نام کاربری"
+                        name="userName"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -43,14 +92,21 @@ export default function LoginComponent() {
                     <div className="control">
                       <input
                         className="input is-medium"
-                        type="email"
+                        type="password"
                         placeholder="کلمه عبود"
+                        name="password"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
-                  <button className="button is-block  is-primary is-fullwidth is-medium">
-                    ورود
-                  </button>
+                  <div className="field">
+                    <div className="control">
+                      <button className="button is-block  is-primary is-fullwidth is-medium">
+                        ورود
+                      </button>
+                    </div>
+                  </div>
+                  <div className="field">{errorPrint()}</div>
                   <br />
                   <small>
                     <em>تمام حقوق این وب سایت محفوظ می باشد</em>
@@ -66,19 +122,19 @@ export default function LoginComponent() {
                 <div className="level-item">
                   <span className="icon">
                     <i className="fa fa-twitter"></i>
-                  </span>{" "}
+                  </span>
                   &emsp;
                   <span className="icon">
                     <i className="fa fa-facebook"></i>
-                  </span>{" "}
+                  </span>
                   &emsp;
                   <span className="icon">
                     <i className="fa fa-instagram"></i>
-                  </span>{" "}
+                  </span>
                   &emsp;
                   <span className="icon">
                     <i className="fa fa-github"></i>
-                  </span>{" "}
+                  </span>
                   &emsp;
                   <span className="icon">
                     <i className="fa fa-envelope"></i>

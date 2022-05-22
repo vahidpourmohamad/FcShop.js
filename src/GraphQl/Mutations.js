@@ -11,3 +11,13 @@ export const REGISTER_MUTATION = gql`
     }
   }
 `;
+export const loginGQL = gql`
+  mutation Login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      id
+      email
+      token
+      username
+    }
+  }
+`;

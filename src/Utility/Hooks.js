@@ -9,7 +9,7 @@ export const useForm = (callback, initialState = {}) => {
   };
 
   const onSubmit = (event) => {
-    console.log("submited");
+   
     event.preventDefault();
     callback();
   };
