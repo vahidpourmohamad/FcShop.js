@@ -46,10 +46,10 @@ export default function LoginComponent() {
       </div>
     ));
   }
-    const errorClear=(event)=> {
-     event.preventDefault();
-      setErrors([]);
-    }
+  const errorClear = (event) => {
+    event.preventDefault();
+    setErrors([]);
+  };
   return (
     <Fragment>
       <div className="container">
@@ -67,6 +67,13 @@ export default function LoginComponent() {
                   <p className="subtitle is-4 colored has-text-centered">
                     مبلمان سوفاست همیشه در کنار شماست
                   </p>
+                </div>
+                <div className="column is-full">
+                  <figure class="image is-256x256 is-1by1 has-text-centered">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/Products/p5a.png`}
+                    ></img>
+                  </figure>
                 </div>
               </div>
 
