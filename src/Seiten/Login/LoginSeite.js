@@ -3,16 +3,15 @@ import { Fragment } from "react";
 import MenuCmp from "../../Components/MenuComponent/MenuCmp";
 import FooterCmp from "../../Components/FooterComponent/FooterCmp";
 import AnmeldungKomponente from "../../Components/AnmeldungKomponente/AnmeldungKomponente";
+import LoginComponent from "../../Components/LoginComponent/LoginComponent";
 
 function LoginSeite() {
   return (
     <Fragment>
-      <MenuCmp />
-      <div className="Container-Center-col">
-        <div className="MenüHintergrund"></div>
-        <AnmeldungKomponente></AnmeldungKomponente>
-      </div>
-      <FooterCmp />
+   
+    
+      <LoginComponent></LoginComponent>
+     
     </Fragment>
   );
 }

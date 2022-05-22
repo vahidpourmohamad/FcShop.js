@@ -38,52 +38,86 @@ export default function AnmeldungKomponente() {
   });
 
   return (
-    <div className="Container-Center-col">
-      <div className="font-bold font-xl TextRTL">Register</div>
-      <form className="Container-Center-col" onSubmit={onSubmit}>
-        <div className="control">
-          <input
-            className="input is-normal  is-hovered "
-            type={"Text"}
-            placeholder="username"
-            name="username"
-            onChange={onChange}
-          ></input>
+    
+    <div className="hero-body" dir="rtl">
+      <div className="columns is-centered">
+        <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+          <div className="container">
+            <form className="box" onSubmit={onSubmit}>
+              <div className="field">
+                <label for="" className="label">
+                  ثبت نام
+                </label>
+              </div>
+              <div className="field">
+                <label for="" className="label">
+                  نام
+                </label>
+                <div className="control">
+                  <input
+                    className="input is-normal  is-hovered "
+                    type={"Text"}
+                    placeholder="username"
+                    name="username"
+                    onChange={onChange}
+                  ></input>
+                </div>
+              </div>
+              <div className="field">
+                <label for="" className="label">
+                  نام
+                </label>
+                <div className="control">
+                  <input
+                    className="input is-normal  is-hovered  "
+                    type={"text"}
+                    placeholder="Email"
+                    name="email"
+                    onChange={onChange}
+                  ></input>
+                </div>
+              </div>
+              <div className="field">
+                <label for="" className="label">
+                  نام
+                </label>
+                <div className="control">
+                  <input
+                    className="input is-normal   is-hovered"
+                    type={"Text"}
+                    placeholder="password"
+                    name="password"
+                    onChange={onChange}
+                  ></input>
+                </div>
+              </div>
+              <div className="field">
+                <label for="" className="label">
+                  نام
+                </label>
+                <div className="control">
+                  <input
+                    className="input is-normal  is-hovered  "
+                    type={"Text"}
+                    name="confirmPassword"
+                    placeholder="confirm passWord"
+                    onChange={onChange}
+                  ></input>
+                </div>
+              </div>
+              <div className="control">
+                <button className="button is-medium is-responsive">
+                  ثبت نام
+                </button>
+              </div>
+              {errors.map((error) => {
+                <div>{error}</div>;
+              })}
+            </form>
+          </div>
         </div>
-        <div className="control">
-          <input
-            className="input is-normal  is-hovered  "
-            type={"text"}
-            placeholder="Email"
-            name="email"
-            onChange={onChange}
-          ></input>
-        </div>
-        <div className="control">
-          <input
-            className="input is-normal   is-hovered"
-            type={"Text"}
-            placeholder="password"
-            name="password"
-            onChange={onChange}
-          ></input>
-        </div>
-        <div className="control">
-          <input
-            className="input is-normal  is-hovered  "
-            type={"Text"}
-            name="confirmPassword"
-            placeholder="confirm passWord"
-            onChange={onChange}
-          ></input>
-        </div>
-        <div className="control">
-          <button className="button is-medium is-responsive">ثبت نام</button>
-        </div>
-        {errors.map((error) => {
-          <div>{error}</div>;
-        })}
-      </form>
-    </div>
+      </div>
+      </div>
+     
   );
 }

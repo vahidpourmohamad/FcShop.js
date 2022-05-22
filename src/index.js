@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import "bulma/css/bulma.min.css";
+import "./index.scss";
 
 import reportWebVitals from "./reportWebVitals";
 // import { Provider } from 'react-redux';
@@ -14,6 +15,7 @@ import Heim from "./Seiten/Heim/HeimSeite";
 import Bloggen from "./Seiten/Bloggen/BloggenSeite";
 import Kontakt from "./Seiten/Kontakt/KontaktSeite";
 import Uber from "./Seiten/Uber/UberSeite";
+
 import ProduktSichtSeite from "./Seiten/ProduktSicht/ProduktSichtSeite";
 import {
   ApolloClient,

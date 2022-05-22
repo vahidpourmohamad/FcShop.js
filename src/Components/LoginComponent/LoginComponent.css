@@ -1,0 +1,53 @@
+.field:not(:last-child) {
+  /* margin-bottom: 1rem; */
+}
+
+.register {
+  margin-top: 5rem;
+  background: white;
+  border-radius: 10px;
+
+}
+
+.left,
+.right {
+  
+}
+
+.left {
+  border-right: 5px solid rgb(247, 247, 247);
+}
+
+
+.left .colored {
+  color: var(--main);
+  margin-top: 1rem !important;
+  letter-spacing: -1px;
+  height: fit-content;
+}
+
+.right .title {
+ 
+  letter-spacing: -1px;
+}
+
+.right .description {
+  margin-top: 1rem;
+  margin-bottom: 1rem !important;
+  color: var(--dark-blue);
+  font-size: 1.15rem;
+}
+
+.right small {
+  color: var(--dark-blue);
+}
+
+input {
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: var(--main) !important;
+  box-shadow: 0 0 0 1px var(--brandColor) !important;
+}
+
