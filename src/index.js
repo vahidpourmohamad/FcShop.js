@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import "bulma/css/bulma.min.css";
+import "bulma/css/bulma-rtl.min.css";
 import "./index.scss";
 
 import reportWebVitals from "./reportWebVitals";
@@ -10,7 +10,6 @@ import reportWebVitals from "./reportWebVitals";
 // import store from './Redux/Store';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // * Seiten Komponenten
-import Anmeldung from "./Seiten/Anmeldung/AnmeldungSeite.js";
 import Heim from "./Seiten/Heim/HeimSeite";
 import Bloggen from "./Seiten/Bloggen/BloggenSeite";
 import Kontakt from "./Seiten/Kontakt/KontaktSeite";
@@ -28,6 +27,7 @@ import { setContext } from "@apollo/client/link/context";
 import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
 import { AuthProvider } from "./Context/AuthContext";
 import LoginSeite from "./Seiten/Login/LoginSeite";
+import Register from "./Seiten/Register/Register";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -66,6 +66,8 @@ root.render(
           <Route path="/KontaktSeite" element={<Kontakt />} />
           <Route path="/ProduktSeite/:id" element={<ProduktSichtSeite />} />
           <Route path="/login" element={<LoginSeite />} />
+          <Route path="/register" element={<Register />} />
+
           <Route
             path="*"
             element={
