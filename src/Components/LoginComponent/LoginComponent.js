@@ -86,7 +86,7 @@ export default function LoginComponent() {
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className="input is-normal"
                         type="text"
                         placeholder="نام کاربری"
                         name="userName"
@@ -98,7 +98,7 @@ export default function LoginComponent() {
                   <div className="field">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className="input is-normal"
                         type="password"
                         placeholder="کلمه عبود"
                         name="password"
