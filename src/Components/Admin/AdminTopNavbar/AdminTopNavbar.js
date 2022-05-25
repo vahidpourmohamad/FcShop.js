@@ -3,7 +3,7 @@ import './AdminTopNavbar.css'
 export default function AdminTopNavbar() {
   return (
     <Fragment>
-      <nav class="navbar  box-shadow-y" dir="rtl">
+      <nav class="navbar is-fixed-top box-shadow-y" dir="rtl">
         <div class="navbar-brand">
           <a
             role="button"

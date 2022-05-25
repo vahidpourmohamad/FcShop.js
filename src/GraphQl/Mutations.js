@@ -21,3 +21,12 @@ export const loginGQL = gql`
     }
   }
 `;
+export const CREATE_CATEGORY = gql`
+  mutation CreateCategory($categoryInput: CategoryInput!) {
+    createCategory(CategoryInput: $categoryInput) {
+      id
+      name
+      parentId
+    }
+  }
+`;

@@ -15,3 +15,15 @@ export const getProductsGQL = gql`
   }
 `;
 
+export const GET_CATEGORIES = gql`
+  query Query {
+    getCatgories {
+      id
+      name
+      parentId
+      imageSrc
+      uniUrl
+      createdAt
+    }
+  }
+`;

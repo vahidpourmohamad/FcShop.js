@@ -29,6 +29,8 @@ import { AuthProvider } from "./Context/AuthContext";
 import LoginSeite from "./Seiten/Login/LoginSeite";
 import Register from "./Seiten/Register/Register";
 import AdminHeim from "./Seiten/Admin/Heim/AdminHeim";
+import ProductAdd from "./Seiten/Admin/ProductAdd/ProductAdd";
+import CategoryAdd from "./Seiten/Admin/CategoryAdd/CategoryAdd";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -68,7 +70,9 @@ root.render(
           <Route path="/ProduktSeite/:id" element={<ProduktSichtSeite />} />
           <Route path="/login" element={<LoginSeite />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/Admin/index" element={< AdminHeim/>} />
+          <Route path="/Admin/index" element={<AdminHeim />} />
+          <Route path="/Admin/productadd" element={<ProductAdd />} />
+          <Route path="/Admin/categoryadd" element={<CategoryAdd />} />
 
           <Route
             path="*"
