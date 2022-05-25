@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 
 const UploadAndDisplayImage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
+//this is only for test
   return (
     <Fragment>
       <p className="description">تصویر مورد نظر را انتخاب کنید</p>
