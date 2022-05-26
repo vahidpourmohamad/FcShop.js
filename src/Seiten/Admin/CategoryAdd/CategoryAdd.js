@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import React, { Fragment, useState, useEffect } from "react";
 import AdminSideMenu from "../../../Components/Admin/AdminSideMenu/AdminSideMenu";
 import AdminTopNavbar from "../../../Components/Admin/AdminTopNavbar/AdminTopNavbar";
@@ -9,6 +9,7 @@ import "./CategoryAdd.css";
 import BulmaInputInLine from "../../../Utility/Bulmainputinline";
 import { useNavigate } from "react-router-dom";
 import UploadAndDisplayImage from "../../../Utility/BulmaFileInput";
+import { UPLOAD_FILE } from "../../../GraphQl/Mutations";
 export default function CategoryAdd() {
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
@@ -19,6 +20,11 @@ export default function CategoryAdd() {
     loading: categoriesLoading,
     data: categoriesData,
   } = useQuery(GET_CATEGORIES);
+
+  const [uploadFile, { loading }] = useMutation(UPLOAD_FILE, {
+    Completed: (data) => console.log("data"),
+  });
+
   useEffect(() => {
     console.log("eett");
     if (!categoriesLoading && !categoriesError) {
@@ -28,7 +34,13 @@ export default function CategoryAdd() {
     }
   }, [categoriesData]);
 
-  function categoryAddCallback() {}
+  function categoryAddCallback() {
+    console.log(values);
+    const { imageFile } = values;
+
+    console.log(imageFile);
+    uploadFile({ variables: { file: imageFile } });
+  }
 
   return (
     <Fragment>
@@ -72,7 +84,10 @@ export default function CategoryAdd() {
                   </div>
                   <div className="column is-6">
                     <p className="title is-6 colored "> تصویر دسته بندی</p>
-                    <UploadAndDisplayImage/>
+                    <UploadAndDisplayImage
+                      name="imageFile"
+                      onChange={onChange}
+                    />
                   </div>
                 </div>
               </div>

@@ -23,6 +23,7 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
+import {createUploadLink} from 'apollo-upload-client'
 import { setContext } from "@apollo/client/link/context";
 import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
 import { AuthProvider } from "./Context/AuthContext";

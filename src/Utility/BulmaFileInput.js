@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
 
-const UploadAndDisplayImage = () => {
+const UploadAndDisplayImage = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const { onChange, name } = props;
 //this is only for test
   return (
     <Fragment>
@@ -31,10 +32,10 @@ const UploadAndDisplayImage = () => {
               <input
                 class="file-input"
                 type="file"
-                name="myImage"
+                name={name}
                 onChange={(event) => {
-                  console.log(event.target.files[0]);
-                  setSelectedImage(event.target.files[0]);
+                   setSelectedImage(event.target.files[0]);
+                  onChange(event);
                 }}
               />
               <span class="file-cta">
@@ -43,7 +44,7 @@ const UploadAndDisplayImage = () => {
                 </span>
                 <span class="file-label">Choose a file…</span>
               </span>
-              <span class="file-name">{selectedImage.name}</span>
+              <span class="file-name">{!selectedImage?"":selectedImage.name}</span>
             </label>
           </div>
         </div>
