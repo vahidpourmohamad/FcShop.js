@@ -32,12 +32,7 @@ export const CREATE_CATEGORY = gql`
 
 `;
 export const UPLOAD_FILE = gql`
-  mutation SingleUpload($file: Upload!) {
-    singleUpload(file: $file) {
-      filename
-      mimetype
-      encoding
-      url
-    }
+  mutation Mutation($file: Upload!) {
+    singleUpload(file: $file)
   }
 `;

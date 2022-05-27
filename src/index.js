@@ -38,6 +38,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   if (graphqlErrors) {
     graphqlErrors.map(({ message, location, path }) => {
+      console.log(`Graphql Error ${message} ${location} ${path}`);
       alert(`Graphql Error ${message} ${location} ${path}`);
     });
   }
@@ -52,7 +53,11 @@ const authlink = setContext((_, { headers }) => {
   };
 });
 
-const link = from([errorLink, new HttpLink({ uri: "http://127.0.0.1:10000" })]);
+const link = from([
+  errorLink,
+  //  new HttpLink({ uri: "http://127.0.0.1:10000" }),
+  createUploadLink({ uri: "http://localhost:10000" }),
+]);
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),

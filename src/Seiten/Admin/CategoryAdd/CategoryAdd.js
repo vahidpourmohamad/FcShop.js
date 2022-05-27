@@ -20,9 +20,14 @@ export default function CategoryAdd() {
     loading: categoriesLoading,
     data: categoriesData,
   } = useQuery(GET_CATEGORIES);
-
+const { imageFile } = values;
   const [uploadFile, { loading }] = useMutation(UPLOAD_FILE, {
-    Completed: (data) => console.log("data"),
+    onCompleted: (data) => console.log("data"),
+    onError({ graphQLErrors }) {
+      console.log(graphQLErrors);
+      setErrors(graphQLErrors);
+    },
+   
   });
 
   useEffect(() => {
@@ -36,10 +41,12 @@ export default function CategoryAdd() {
 
   function categoryAddCallback() {
     console.log(values);
-    const { imageFile } = values;
+    
 
-    console.log(imageFile);
-    uploadFile({ variables: { file: imageFile } });
+      console.log(imageFile);
+      const File = imageFile;
+       console.log(File);
+    uploadFile({ variables: { file :File}});
   }
 
   return (

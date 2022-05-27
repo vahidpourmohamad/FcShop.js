@@ -4,7 +4,7 @@ export const useForm = (callback, initialState = {}) => {
   const [values, setValues] = useState(initialState);
 
   const onChange = (event) => {
-    if (event.target.files[0]) {
+    if (event.target.files) {
       setValues({ ...values, [event.target.name]: event.target.files[0] });
     } else {
       setValues({ ...values, [event.target.name]: event.target.value });
@@ -14,6 +14,7 @@ export const useForm = (callback, initialState = {}) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    
     callback();
   };
 
