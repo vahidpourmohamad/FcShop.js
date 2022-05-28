@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+// const GraphQLUpload = require("graphql-upload/GraphQLUpload.js");
 
 export const REGISTER_MUTATION = gql`
   mutation Register($registerInput: RegisterInput) {
@@ -33,6 +34,11 @@ export const CREATE_CATEGORY = gql`
 `;
 export const UPLOAD_FILE = gql`
   mutation Mutation($file: Upload!) {
-    singleUpload(file: $file)
+    singleUpload(file: $file) {
+      filename
+      mimetype
+      encoding
+      url
+    }
   }
 `;

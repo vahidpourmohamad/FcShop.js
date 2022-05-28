@@ -20,14 +20,17 @@ export default function CategoryAdd() {
     loading: categoriesLoading,
     data: categoriesData,
   } = useQuery(GET_CATEGORIES);
-const { imageFile } = values;
-  const [uploadFile, { loading }] = useMutation(UPLOAD_FILE, {
+  const { imageFile } = values;
+  const [uploadFile] = useMutation(UPLOAD_FILE, {
     onCompleted: (data) => console.log("data"),
-    onError({ graphQLErrors }) {
-      console.log(graphQLErrors);
-      setErrors(graphQLErrors);
+    onError({ graphQLError, networkError }) {
+      if (networkError) {
+        console.log(networkError);
+      }
+      if (graphQLError) {
+        console.log(graphQLError);
+      }
     },
-   
   });
 
   useEffect(() => {
@@ -41,12 +44,12 @@ const { imageFile } = values;
 
   function categoryAddCallback() {
     console.log(values);
+    console.log(imageFile);
+    const File = imageFile;
     
-
-      console.log(imageFile);
-      const File = imageFile;
-       console.log(File);
-    uploadFile({ variables: { file :File}});
+    const image = new Blob([File], { type: "image/jpeg" });
+    console.log(image);
+      uploadFile({ variables: { file: image } });
   }
 
   return (
@@ -64,7 +67,12 @@ const { imageFile } = values;
                     <p className="description">
                       لطفا دسته بندی مورد نظر خود را در این قسمت اضافه کنید
                     </p>
-                    <form className="box " onSubmit={onSubmit}>
+                    <form
+                    //   method="post"
+                    //   enctype="multipart/form-data"
+                      className="box "
+                      onSubmit={onSubmit}
+                    >
                       <BulmaInputInLine
                         name="ProductName"
                         icon="fa fa-folder"
