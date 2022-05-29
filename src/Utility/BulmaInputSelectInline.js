@@ -19,6 +19,7 @@ export default function BulmaInputSelectInline(props) {
         <div class="field">
           <div className="  control is-rounded  select is-expanded   is-fullwidth">
             <select name={name} onChange={onChange}>
+              <option value="0" selected>ندارد</option>
               {selectData.map((data, Id) => (
                 <option value={data.id}>{data.name}</option>
               ))}

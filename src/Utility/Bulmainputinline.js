@@ -24,6 +24,7 @@ export default function BulmaInputInLine(props) {
               placeholder={text}
               name={name}
               onChange={onChange}
+              required={require}
             />
             <span className="icon is-small is-left">
               <i className={icon}></i>

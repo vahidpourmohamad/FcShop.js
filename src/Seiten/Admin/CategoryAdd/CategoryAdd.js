@@ -9,20 +9,41 @@ import "./CategoryAdd.css";
 import BulmaInputInLine from "../../../Utility/Bulmainputinline";
 import { useNavigate } from "react-router-dom";
 import UploadAndDisplayImage from "../../../Utility/BulmaFileInput";
-import { UPLOAD_FILE } from "../../../GraphQl/Mutations";
+import { CREATE_CATEGORY, UPLOAD_FILE } from "../../../GraphQl/Mutations";
+
 export default function CategoryAdd() {
   const [errors, setErrors] = useState([]);
+
   const navigate = useNavigate();
+
   const { onChange, onSubmit, values } = useForm(categoryAddCallback, {});
   const [categories, setCategories] = useState([]);
+
   const {
     error: categoriesError,
     loading: categoriesLoading,
     data: categoriesData,
   } = useQuery(GET_CATEGORIES);
+
   const { imageFile } = values;
+
   const [uploadFile] = useMutation(UPLOAD_FILE, {
-    onCompleted: (data) => console.log("data"),
+    onCompleted: (data) => {
+      const { url } = data.singleUpload;
+      if (!values.Category) {
+        values.Category = "0";
+      }
+      const CategoryInput = {
+        name: values.CategoryName,
+        parentId: values.Category,
+        imageSrc: url,
+        uniUrl: "String",
+      };
+          console.log(CategoryInput);
+          cerateCategoryMutation({
+            variables: { categoryInput: CategoryInput },
+          });
+    },
     onError({ graphQLError, networkError }) {
       if (networkError) {
         console.log(networkError);
@@ -31,6 +52,19 @@ export default function CategoryAdd() {
         console.log(graphQLError);
       }
     },
+  });
+
+  const [cerateCategoryMutation] = useMutation(CREATE_CATEGORY, {
+    onCompleted: (data) => {console.log("OK")},
+    onError({ graphQLError, networkError }) {
+      if (networkError) {
+        console.log(networkError);
+      }
+      if (graphQLError) {
+        console.log(graphQLError);
+      }
+    },
+    variables: { CategoryInput: values },
   });
 
   useEffect(() => {
@@ -43,13 +77,9 @@ export default function CategoryAdd() {
   }, [categoriesData]);
 
   function categoryAddCallback() {
-    console.log(values);
-    console.log(imageFile);
     const File = imageFile;
-    
     const image = new Blob([File], { type: "image/jpeg" });
-    console.log(image);
-      uploadFile({ variables: { file: image } });
+    uploadFile({ variables: { file: image } });
   }
 
   return (
@@ -68,13 +98,13 @@ export default function CategoryAdd() {
                       لطفا دسته بندی مورد نظر خود را در این قسمت اضافه کنید
                     </p>
                     <form
-                    //   method="post"
-                    //   enctype="multipart/form-data"
+                      //   method="post"
+                      //   enctype="multipart/form-data"
                       className="box "
                       onSubmit={onSubmit}
                     >
                       <BulmaInputInLine
-                        name="ProductName"
+                        name="CategoryName"
                         icon="fa fa-folder"
                         onChange={onChange}
                         require={true}
