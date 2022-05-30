@@ -39,10 +39,10 @@ export default function CategoryAdd() {
         imageSrc: url,
         uniUrl: "String",
       };
-          console.log(CategoryInput);
-          cerateCategoryMutation({
-            variables: { categoryInput: CategoryInput },
-          });
+     
+      cerateCategoryMutation({
+        variables: { categoryInput: CategoryInput },
+      });
     },
     onError({ graphQLError, networkError }) {
       if (networkError) {
@@ -55,7 +55,9 @@ export default function CategoryAdd() {
   });
 
   const [cerateCategoryMutation] = useMutation(CREATE_CATEGORY, {
-    onCompleted: (data) => {console.log("OK")},
+    onCompleted: (data) => {
+   
+    },
     onError({ graphQLError, networkError }) {
       if (networkError) {
         console.log(networkError);
@@ -68,10 +70,8 @@ export default function CategoryAdd() {
   });
 
   useEffect(() => {
-    console.log("eett");
     if (!categoriesLoading && !categoriesError) {
       const { getCatgories } = categoriesData;
-      console.log(getCatgories);
       setCategories(getCatgories);
     }
   }, [categoriesData]);

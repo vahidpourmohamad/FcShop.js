@@ -9,15 +9,14 @@ export default function PopularProductListCom() {
   const { error, loading, data } = useQuery(getProductsGQL);
   useEffect(() => {
     if (!loading && !error) {
-      console.log(data);
+  
       const { getProducts } =  data;
       getProducts.map((item, id) => {
-        console.log(item);
+        // console.log(item);
       });
     }
     return () => {
-      // console.log(data);
-      // console.log(getProducts[0]);
+  
     };
   }, [data]);
 

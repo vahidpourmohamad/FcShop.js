@@ -32,12 +32,13 @@ import Register from "./Seiten/Register/Register";
 import AdminHeim from "./Seiten/Admin/Heim/AdminHeim";
 import ProductAdd from "./Seiten/Admin/ProductAdd/ProductAdd";
 import CategoryAdd from "./Seiten/Admin/CategoryAdd/CategoryAdd";
+import CategoryList from "./Seiten/Admin/CategoryList/CategoryList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   if (networkErrors) {
-     console.log("test");
+     
     networkErrors.map(({ message, location, path }) => {
       console.log(`Graphql Error ${message} ${location} ${path}`);
       alert(`Graphql Error ${message} ${location} ${path}`);
@@ -84,8 +85,9 @@ root.render(
           <Route path="/login" element={<LoginSeite />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Admin/index" element={<AdminHeim />} />
-          <Route path="/Admin/productadd" element={<ProductAdd />} />
-          <Route path="/Admin/categoryadd" element={<CategoryAdd />} />
+          <Route path="/Admin/productAdd" element={<ProductAdd />} />
+          <Route path="/Admin/categoryAdd" element={<CategoryAdd />} />
+          <Route path="/Admin/categoryList" element={<CategoryList />} />
 
           <Route
             path="*"
@@ -101,7 +103,5 @@ root.render(
   </AuthProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

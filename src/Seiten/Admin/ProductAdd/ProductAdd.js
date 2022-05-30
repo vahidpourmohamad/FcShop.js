@@ -13,16 +13,15 @@ export default function ProductAdd() {
   const [categories, setCategories] = useState([]);
   const { error, loading, data } = useQuery(GET_CATEGORIES);
   useEffect(() => {
-    console.log("test");
+   
     if (!loading && !error) {
-      console.log("test23");
+     
       const { getCatgories } = data;
-      console.log(getCatgories);
+     
          setCategories(getCatgories);
     }
     return () => {
-      // console.log(data);
-      // console.log(getProducts[0]);
+     
     };
   }, [data]);
 

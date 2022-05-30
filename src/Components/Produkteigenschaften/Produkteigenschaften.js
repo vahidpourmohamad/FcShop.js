@@ -3,7 +3,7 @@ import "./Produkteigenschaften.css";
 
 export default function Produkteigenschaften(props) {
   const { features } = props;
-  console.log(features);
+ 
   return (
     <Fragment>
       <div className="ProdukteigenschaftenContainer">

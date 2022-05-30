@@ -10,15 +10,15 @@ export default function SelectedProductListCmp() {
 
     const handleClick = (param) => {
         if (param == 1) {
-            console.log("Option 1 is selected");
+           
             setProductList(ProductsDummy);
         }
         if (param == 2) {
-            console.log("Option 2 is selected");
+           
             setProductList(ProductsDummyTwo);
          }
         if (param == 3) {
-            console.log("Option 3 is selected");
+           
             setProductList(ProductsDummy);
          }
 

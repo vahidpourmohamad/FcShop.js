@@ -12,8 +12,7 @@ export default function AnmeldungKomponente() {
 
   let navigate = useNavigate();
   function registerUserCallback() {
-    console.log("test");
-    console.log(values);
+ 
     registerUser();
   }
 
@@ -26,14 +25,13 @@ export default function AnmeldungKomponente() {
 
   const [registerUser, { loading }] = useMutation(REGISTER_MUTATION, {
     update(proxy, { data: { register: userData } }) {
-      console.log("test")
-      console.log(userData);
+
       context.login(userData);
-      console.log("Data Inserted 2");
+  
       navigate("/");
     },
     onError({ graphQLErrors }) {
-      console.log(graphQLErrors);
+   
       setErrors(graphQLErrors);
     },
     variables: { registerInput: values },

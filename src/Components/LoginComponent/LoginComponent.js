@@ -19,24 +19,24 @@ export default function LoginComponent() {
 
   const [loginUser, { loading }] = useMutation(loginGQL, {
     update(proxy, { data: { login: userData } }) {
-      console.log("userlogin2");
+      
       context.login(userData);
       navigate("/");
     },
     onError({ graphQLErrors }) {
       setErrors(graphQLErrors);
-      // console.log(errors);
+     
     },
     variables: { username: userName, password: password },
   });
 
   function loginFunc() {
-    console.log("userLogin");
+    
     loginUser();
   }
 
   function errorPrint() {
-    console.log(errors);
+  
     return errors.map((error, id) => (
       <div className="control">
         <div class="notification is-danger ">
