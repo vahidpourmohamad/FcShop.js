@@ -98,9 +98,7 @@ export default function CategoryAdd() {
                       لطفا دسته بندی مورد نظر خود را در این قسمت اضافه کنید
                     </p>
                     <form
-                      //   method="post"
-                      //   enctype="multipart/form-data"
-                      className="box "
+                    className="box "
                       onSubmit={onSubmit}
                     >
                       <BulmaInputInLine

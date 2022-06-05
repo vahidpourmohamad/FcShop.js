@@ -42,3 +42,8 @@ export const UPLOAD_FILE = gql`
     }
   }
 `;
+export const DELETE_CATEGORY = gql`
+  mutation DeleteCategory($categoryId: ID!) {
+    deleteCategory(CategoryID: $categoryId)
+  }
+`;
