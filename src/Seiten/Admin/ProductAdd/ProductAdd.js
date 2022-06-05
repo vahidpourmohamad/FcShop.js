@@ -5,26 +5,70 @@ import AdminTopNavbar from "../../../Components/Admin/AdminTopNavbar/AdminTopNav
 import { GET_CATEGORIES } from "../../../GraphQl/Queries";
 import BulmaInputInLine from "../../../Utility/Bulmainputinline";
 import BulmaInputSelectInline from "../../../Utility/BulmaInputSelectInline";
+import BulmaTextAreaInline from "../../../Utility/BulmaTextAreaInline";
 import { useForm } from "../../../Utility/Hooks";
-
+import { SketchPicker } from "react-color";
 import "./ProductAdd.css";
 export default function ProductAdd() {
   const { onChange, onSubmit, values } = useForm(productAddCallback, {});
   const [categories, setCategories] = useState([]);
   const { error, loading, data } = useQuery(GET_CATEGORIES);
   useEffect(() => {
-   
     if (!loading && !error) {
-     
       const { getCatgories } = data;
-     
-         setCategories(getCatgories);
-    }
-    return () => {
-     
-    };
-  }, [data]);
 
+      setCategories(getCatgories);
+    }
+    return () => {};
+  }, [data]);
+  let colorPickerInit = {
+    displayColorPicker: true,
+    color: {
+      r: "241",
+      g: "112",
+      b: "19",
+      a: "1",
+    },
+  };
+  const [colorPicker, setColorPicker] = useState();
+
+  const colorPickerClick = (event) => {
+    event.preventDefault();
+    console.log("test");
+    if (colorPicker == true) {
+      setColorPicker(false);
+    } else {
+      setColorPicker(true);
+    }
+    //   console.log(colorPicker);
+    //   let temp = colorPicker;
+    //  if (colorPicker.displayColorPicker == true)
+    //  {
+    //    temp.displayColorPicker = false;
+    //    setColorPicker(temp);
+    //   }
+    //   else
+    //  {
+    //    temp.displayColorPicker = true;
+    //    setColorPicker(temp);
+    //    }
+  };
+  // pcode: String!
+  // name: String!
+  // category: String!
+  // OLname: String!
+  // price: String!
+  // shortDescription: String!
+  // LongDescription: String!
+  // OLshortDescription: String!
+  // OLLongDescription: String!
+  // H: Float
+  // W: Float
+  // L: Float
+  // wieght: Float
+  // color: String!
+  // material: String!
+  // images: [String]
   function productAddCallback() {}
   return (
     <Fragment>
@@ -44,12 +88,12 @@ export default function ProductAdd() {
                     </p>
                     <form className="box ">
                       <BulmaInputInLine
-                        name="ProductName"
+                        name="pcode"
                         icon="fa fa-user"
                         onChange={onChange}
                         require={true}
                         type="text"
-                        text="نام محصول"
+                        text="کد محصول"
                       ></BulmaInputInLine>
                       <BulmaInputInLine
                         name="ProductName"
@@ -59,15 +103,6 @@ export default function ProductAdd() {
                         type="text"
                         text="نام محصول"
                       ></BulmaInputInLine>
-                      <BulmaInputInLine
-                        name="ProductName"
-                        icon="fa fa-user"
-                        onChange={onChange}
-                        require={true}
-                        type="text"
-                        text="نام محصول"
-                                          ></BulmaInputInLine>
-                                          
                       <BulmaInputSelectInline
                         name="Category"
                         onChange={onChange}
@@ -75,6 +110,100 @@ export default function ProductAdd() {
                         selectData={categories}
                         text="دسته بندی"
                       />
+                      <BulmaInputInLine
+                        name="price"
+                        icon="fa fa-user"
+                        onChange={onChange}
+                        require={true}
+                        type="text"
+                        text="قیمت"
+                      ></BulmaInputInLine>
+                      <BulmaTextAreaInline
+                        name="shortDescription"
+                        onChange={onChange}
+                        require={true}
+                        row="2"
+                        text="توضیح کوتاه"
+                      ></BulmaTextAreaInline>
+                      <div class="columns">
+                        <div className="column is-6">
+                          <BulmaInputInLine
+                            name="H"
+                            icon=""
+                            onChange={onChange}
+                            require={false}
+                            type="text"
+                            text="ارتفاع"
+                          ></BulmaInputInLine>
+                        </div>
+                        <div className="column is-6">
+                          <BulmaInputInLine
+                            name="W"
+                            icon=""
+                            onChange={onChange}
+                            require={false}
+                            type="text"
+                            text="عرض"
+                          ></BulmaInputInLine>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div className="column is-6">
+                          <BulmaInputInLine
+                            name="L"
+                            icon=""
+                            onChange={onChange}
+                            require={false}
+                            type="text"
+                            text="طول"
+                          ></BulmaInputInLine>
+                        </div>
+                        <div className="column is-6">
+                          <BulmaInputInLine
+                            name="wieght"
+                            icon="fa fa-user"
+                            onChange={onChange}
+                            require={false}
+                            type="text"
+                            text="وزن"
+                          ></BulmaInputInLine>
+                        </div>
+                      </div>
+                      {colorPicker ? (
+                        <SketchPicker
+                          onChangeComplete={onChange}
+                          disableAlpha={true}
+                        />
+                      ) : (
+                        <div></div>
+                      )}
+
+                      <div className="field">
+                        <div className="control">
+                          <a
+                            onClick={colorPickerClick}
+                            className="button is-block  is-success is-fullwidth is-medium"
+                          >
+                            ثبت دسته بندی
+                          </a>
+                        </div>
+                      </div>
+                      <BulmaInputInLine
+                        name="color"
+                        icon="fa fa-user"
+                        onChange={onChange}
+                        require={true}
+                        type="text"
+                        text="رنگ"
+                      ></BulmaInputInLine>
+                      <BulmaInputInLine
+                        name="material"
+                        icon="fa fa-user"
+                        onChange={onChange}
+                        require={true}
+                        type="text"
+                        text="جنس"
+                      ></BulmaInputInLine>
                     </form>
                   </div>
                   <div className="column is-6">
