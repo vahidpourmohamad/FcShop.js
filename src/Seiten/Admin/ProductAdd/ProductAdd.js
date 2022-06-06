@@ -7,7 +7,7 @@ import BulmaInputInLine from "../../../Utility/Bulmainputinline";
 import BulmaInputSelectInline from "../../../Utility/BulmaInputSelectInline";
 import BulmaTextAreaInline from "../../../Utility/BulmaTextAreaInline";
 import { useForm } from "../../../Utility/Hooks";
-import { SketchPicker } from "react-color";
+import { BlockPicker } from "react-color";
 import "./ProductAdd.css";
 export default function ProductAdd() {
   const { onChange, onSubmit, values } = useForm(productAddCallback, {});
@@ -40,18 +40,13 @@ export default function ProductAdd() {
     } else {
       setColorPicker(true);
     }
-    //   console.log(colorPicker);
-    //   let temp = colorPicker;
-    //  if (colorPicker.displayColorPicker == true)
-    //  {
-    //    temp.displayColorPicker = false;
-    //    setColorPicker(temp);
-    //   }
-    //   else
-    //  {
-    //    temp.displayColorPicker = true;
-    //    setColorPicker(temp);
-    //    }
+  };
+  const cover = {
+    position: "absolute",
+    top: "0px",
+    right: "0px",
+    bottom: "0px",
+    left: "0px",
   };
   // pcode: String!
   // name: String!
@@ -169,25 +164,31 @@ export default function ProductAdd() {
                           ></BulmaInputInLine>
                         </div>
                       </div>
-                      {colorPicker ? (
-                        <SketchPicker
-                          onChangeComplete={onChange}
-                          disableAlpha={true}
-                        />
-                      ) : (
-                        <div></div>
-                      )}
 
                       <div className="field">
                         <div className="control">
                           <a
                             onClick={colorPickerClick}
-                            className="button is-block  is-success is-fullwidth is-medium"
+                            className="button is-success  is-medium"
                           >
-                            ثبت دسته بندی
+                              انتخاب رنگ
                           </a>
                         </div>
                       </div>
+                      {colorPicker ? (
+                        <div className="field">
+                          <div className="control">
+                            <BlockPicker
+                              styles={{cover}}
+                              onChangeComplete={onChange}
+                              disableAlpha={true}
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
+
                       <BulmaInputInLine
                         name="color"
                         icon="fa fa-user"
