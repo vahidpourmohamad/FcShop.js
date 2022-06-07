@@ -9,6 +9,7 @@ import BulmaTextAreaInline from "../../../Utility/BulmaTextAreaInline";
 import { useForm } from "../../../Utility/Hooks";
 import { BlockPicker } from "react-color";
 import "./ProductAdd.css";
+import ColorPicker from "../../../Utility/ColorPicker";
 export default function ProductAdd() {
   const { onChange, onSubmit, values } = useForm(productAddCallback, {});
   const [categories, setCategories] = useState([]);
@@ -21,33 +22,34 @@ export default function ProductAdd() {
     }
     return () => {};
   }, [data]);
-  let colorPickerInit = {
-    displayColorPicker: true,
-    color: {
-      r: "241",
-      g: "112",
-      b: "19",
-      a: "1",
-    },
-  };
-  const [colorPicker, setColorPicker] = useState();
 
-  const colorPickerClick = (event) => {
+  const [colorArray, setColorArray] = useState([]);
+
+  const [colorItem, setColorItem] = useState([{}]);
+
+  const colorAddClick = (event) => {
     event.preventDefault();
-    console.log("test");
-    if (colorPicker == true) {
-      setColorPicker(false);
-    } else {
-      setColorPicker(true);
-    }
+    console.log(colorItem);
+    colorItem.push({});
+    setColorItem([...colorItem]);
+    console.log(colorItem);
   };
-  const cover = {
-    position: "absolute",
-    top: "0px",
-    right: "0px",
-    bottom: "0px",
-    left: "0px",
+  const colorRemoveClick = (id) => {
+    console.log(id);
+    console.log(colorItem);
+    colorItem.splice(id, 1);
+    setColorItem([...colorItem]);
+  colorArray.splice(id, 1);
+    console.log(colorArray);
+    setColorArray( [...colorArray]);
+    console.log(colorItem);
   };
+  const colorChosenClick = (color, id) => {
+    colorArray.push(color);
+    setColorArray([...colorArray]);
+    // setColorArray({ ...colorArray, [id]: color });
+  };
+
   // pcode: String!
   // name: String!
   // category: String!
@@ -165,13 +167,22 @@ export default function ProductAdd() {
                         </div>
                       </div>
 
-                      <div className="field">
+                      {colorItem.map((item, i) => (
+                        // <div>
+                        <ColorPicker
+                          id={i}
+                          onPlus={colorAddClick}
+                          onDelete={colorRemoveClick}
+                          onChoose={colorChosenClick}
+                        />
+                      ))}
+                      {/* <div className="field">
                         <div className="control">
                           <a
                             onClick={colorPickerClick}
                             className="button is-success  is-medium"
                           >
-                              انتخاب رنگ
+                            انتخاب رنگ
                           </a>
                         </div>
                       </div>
@@ -179,7 +190,7 @@ export default function ProductAdd() {
                         <div className="field">
                           <div className="control">
                             <BlockPicker
-                              styles={{cover}}
+                              styles={{ cover }}
                               onChangeComplete={onChange}
                               disableAlpha={true}
                             />
@@ -187,8 +198,7 @@ export default function ProductAdd() {
                         </div>
                       ) : (
                         <div></div>
-                      )}
-
+                      )} */}
                       <BulmaInputInLine
                         name="color"
                         icon="fa fa-user"
