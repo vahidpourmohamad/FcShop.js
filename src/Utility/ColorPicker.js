@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BlockPicker } from "react-color";
 
 export default function ColorPicker(props) {
-  const { onDelete, onChoose, id, onPlus } = props;
+  const { onDelete, onChoose, id, onPlus, color } = props;
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [chosenColor, setChosenColor] = useState();
   const cover = {
@@ -12,6 +12,10 @@ export default function ColorPicker(props) {
     bottom: "0px",
     left: "0px",
   };
+  useEffect(() => {
+    setChosenColor(color);
+  }, [color]);
+
   const colorPickerClick = (event) => {
     event.preventDefault();
     if (showColorPicker == true) {
@@ -59,7 +63,7 @@ export default function ColorPicker(props) {
               className="button is-fullwidth  is-small"
               style={{ backgroundColor: chosenColor }}
               disabled
-            />
+                      >{id}</button>
           </div>
         </div>
       </div>

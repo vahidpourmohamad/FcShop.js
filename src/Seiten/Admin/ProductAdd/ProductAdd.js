@@ -23,31 +23,29 @@ export default function ProductAdd() {
     return () => {};
   }, [data]);
 
-  const [colorArray, setColorArray] = useState([]);
-
-  const [colorItem, setColorItem] = useState([{}]);
+  const [colorArray, setColorArray] = useState({ 0: "#d9e3f0" });
 
   const colorAddClick = (event) => {
     event.preventDefault();
-    console.log(colorItem);
-    colorItem.push({});
-    setColorItem([...colorItem]);
-    console.log(colorItem);
+
+    let length = Object.keys(colorArray).length;
+    console.log(Object.keys(colorArray).length);
+    if (colorArray[length]) {
+      length += 10;
+    }
+    setColorArray({
+      ...colorArray,
+      [length]: "#d9e3f0",
+    });
   };
   const colorRemoveClick = (id) => {
-    console.log(id);
-    console.log(colorItem);
-    colorItem.splice(id, 1);
-    setColorItem([...colorItem]);
-  colorArray.splice(id, 1);
-    console.log(colorArray);
-    setColorArray( [...colorArray]);
-    console.log(colorItem);
+    if (Object.keys(colorArray).length > 1) {
+      delete colorArray[id];
+      setColorArray({ ...colorArray });
+    }
   };
   const colorChosenClick = (color, id) => {
-    colorArray.push(color);
-    setColorArray([...colorArray]);
-    // setColorArray({ ...colorArray, [id]: color });
+    setColorArray({ ...colorArray, [id]: color });
   };
 
   // pcode: String!
@@ -166,47 +164,18 @@ export default function ProductAdd() {
                           ></BulmaInputInLine>
                         </div>
                       </div>
-
-                      {colorItem.map((item, i) => (
-                        // <div>
-                        <ColorPicker
-                          id={i}
-                          onPlus={colorAddClick}
-                          onDelete={colorRemoveClick}
-                          onChoose={colorChosenClick}
-                        />
+                      {Object.keys(colorArray).map((key, index) => (
+                        <div key={index}>
+                          <ColorPicker
+                            id={key}
+                            onPlus={colorAddClick}
+                            onDelete={colorRemoveClick}
+                            onChoose={colorChosenClick}
+                            color={colorArray[key]}
+                          />
+                        </div>
                       ))}
-                      {/* <div className="field">
-                        <div className="control">
-                          <a
-                            onClick={colorPickerClick}
-                            className="button is-success  is-medium"
-                          >
-                            انتخاب رنگ
-                          </a>
-                        </div>
-                      </div>
-                      {colorPicker ? (
-                        <div className="field">
-                          <div className="control">
-                            <BlockPicker
-                              styles={{ cover }}
-                              onChangeComplete={onChange}
-                              disableAlpha={true}
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        <div></div>
-                      )} */}
-                      <BulmaInputInLine
-                        name="color"
-                        icon="fa fa-user"
-                        onChange={onChange}
-                        require={true}
-                        type="text"
-                        text="رنگ"
-                      ></BulmaInputInLine>
+
                       <BulmaInputInLine
                         name="material"
                         icon="fa fa-user"

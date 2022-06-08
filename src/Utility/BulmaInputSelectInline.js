@@ -23,7 +23,7 @@ export default function BulmaInputSelectInline(props) {
                 ندارد
               </option>
               {selectData.map((data, i) => (
-                <option value={data.id}>{data.name}</option>
+                <option key={i} value={data.id}>{data.name}</option>
               ))}
             </select>
             {requireFunction(require)}
