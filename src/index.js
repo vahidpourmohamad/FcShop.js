@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
@@ -6,14 +6,8 @@ import "bulma/css/bulma-rtl.min.css";
 import "./index.scss";
 
 import reportWebVitals from "./reportWebVitals";
-// import { Provider } from 'react-redux';
-// import store from './Redux/Store';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// * Seiten Komponenten
-import Heim from "./Seiten/Heim/HeimSeite";
-import Bloggen from "./Seiten/Bloggen/BloggenSeite";
-import Kontakt from "./Seiten/Kontakt/KontaktSeite";
-import Uber from "./Seiten/Uber/UberSeite";
 
 import ProduktSichtSeite from "./Seiten/ProduktSicht/ProduktSichtSeite";
 import {
@@ -23,22 +17,15 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
-import {createUploadLink} from 'apollo-upload-client'
+import { createUploadLink } from "apollo-upload-client";
 import { setContext } from "@apollo/client/link/context";
 import { ErrorLink, onError, OnError } from "@apollo/client/link/error";
 import { AuthProvider } from "./Context/AuthContext";
-import LoginSeite from "./Seiten/Login/LoginSeite";
-import Register from "./Seiten/Register/Register";
-import AdminHeim from "./Seiten/Admin/Heim/AdminHeim";
-import ProductAdd from "./Seiten/Admin/ProductAdd/ProductAdd";
-import CategoryAdd from "./Seiten/Admin/CategoryAdd/CategoryAdd";
-import CategoryList from "./Seiten/Admin/CategoryList/CategoryList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const errorLink = onError(({ graphqlErrors, networkErrors }) => {
   if (networkErrors) {
-     
     networkErrors.map(({ message, location, path }) => {
       console.log(`Graphql Error ${message} ${location} ${path}`);
       alert(`Graphql Error ${message} ${location} ${path}`);
@@ -72,6 +59,26 @@ const client = new ApolloClient({
   link: authlink.concat(link),
 });
 
+const Heim = lazy(() => import("./Seiten/Heim/HeimSeite"));
+
+const Bloggen = lazy(() => import("./Seiten/Bloggen/BloggenSeite"));
+
+const Kontakt = lazy(() => import("./Seiten/Kontakt/KontaktSeite"));
+
+const Uber = lazy(() => import("./Seiten/Uber/UberSeite"));
+
+const LoginSeite = lazy(() => import("./Seiten/Login/LoginSeite"));
+
+const Register = lazy(() => import("./Seiten/Register/Register"));
+const AdminHeim = lazy(() => import("./Seiten/Admin/Heim/AdminHeim"));
+const ProductAdd = lazy(() => import("./Seiten/Admin/ProductAdd/ProductAdd"));
+const CategoryAdd = lazy(() =>
+  import("./Seiten/Admin/CategoryAdd/CategoryAdd")
+);
+const CategoryList = lazy(() =>
+  import("./Seiten/Admin/CategoryList/CategoryList")
+);
+
 root.render(
   <AuthProvider>
     <ApolloProvider client={client}>
@@ -102,6 +109,5 @@ root.render(
     </ApolloProvider>
   </AuthProvider>
 );
-
 
 reportWebVitals();
